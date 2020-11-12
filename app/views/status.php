@@ -3,7 +3,7 @@ new UkuaPage(
     "Ukua | " . UkuaMessages::getMessage('Status', Ukua::getLang()),
     "
 <main class='page'>
-    <section class='page-info'>
+    <section class='page-section'>
         <div class='container'>
             <div class='row p-2 status-table'>
                 <div class='col-sm-12 p-2 status-item'>

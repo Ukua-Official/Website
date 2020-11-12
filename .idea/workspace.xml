@@ -54,6 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -142,6 +143,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="328" y="117" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1604854339932" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1605192520724">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1605192520724" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1605104011151">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

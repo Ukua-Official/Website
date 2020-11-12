@@ -3,7 +3,7 @@ new UkuaPage(
     "Ukua",
     "
 <main class='page'>
-    <section class='page-info'>
+    <section class='page-section'>
         <div class='container'>
             <div class='page-title strong'>
                 <p>Home</p>
