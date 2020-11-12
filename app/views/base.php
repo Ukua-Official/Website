@@ -200,9 +200,9 @@
     }, true)
 </script>
 <?php if (UkuaPage::getScript() != null) { ?>
-<script defer>
-    <?php echo UkuaPage::getScript() ?>
-</script>
+    <script defer>
+        <?php echo UkuaPage::getScript() ?>
+    </script>
 <?php } ?>
 <script src="/public/assets/js/main.min.js"></script>
 

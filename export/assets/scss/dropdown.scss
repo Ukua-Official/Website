@@ -1,14 +1,14 @@
 .dropdown-menu.show {
-    
-    @for $num from 1 through 3 {
 
-        .item-#{$num} {
-            
-            animation: rotateX 300ms ($num * 60ms) ease-in-out forwards;
-            transform-origin: top center;
-            
-        }
+  @for $num from 1 through 3 {
+
+    .item-#{$num} {
+
+      animation: rotateX 300ms ($num * 60ms) ease-in-out forwards;
+      transform-origin: top center;
+
     }
+  }
 }
 
 @keyframes rotateX {

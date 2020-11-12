@@ -1,7 +1,7 @@
 :root {
     --background-color: #646464;
     --navigation-inactive: black;
-    --navigation-active: hsla(0,0%, 10%, 0.9);
+    --navigation-active: hsla(0, 0%, 10%, 0.9);
     --footer-color: white;
     --footer-background: #646464;
     --gradient-1: #fc9c37;

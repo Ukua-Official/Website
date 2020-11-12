@@ -1,13 +1,13 @@
 {
-    "name": "ukua.com/website",
-    "type": "project",
-    "require": {
-        "altorouter/altorouter": "1.1.0"
-    },
-    "authors": [
-        {
-            "name": "Levasseur Wesley",
-            "email": "mailpro.levasseur@icloud.com"
-        }
-    ]
+  "name": "ukua.com/website",
+  "type": "project",
+  "require": {
+    "altorouter/altorouter": "1.1.0"
+  },
+  "authors": [
+    {
+      "name": "Levasseur Wesley",
+      "email": "mailpro.levasseur@icloud.com"
+    }
+  ]
 }
