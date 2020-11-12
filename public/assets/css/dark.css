@@ -1,11 +1,21 @@
 :root {
     --background-color: #646464;
-    --navigation-inactive: black;
-    --navigation-active: hsla(0, 0%, 10%, 0.9);
+    --navigation-inactive: white;
+    --navigation-active: hsla(0, 0%, 95%, 0.9);
     --footer-color: white;
     --footer-background: #646464;
     --gradient-1: #fc9c37;
     --gradient-2: #fddc39;
     --or: white;
     --default-text-color: white;
+    --form-shadow: rgba(255, 255, 255, 0.1);
+    --form-input: #515151;
+    --btn-color: white;
+    --btn-background-color: #ffa70f;
+    --btn-border-color: #ffa70f;
+    --btn-background-color-fh: #e69100;
+    --btn-border-color-fh: #db8b00;
+    --btn-shadow: #ff8533;
+    --btn-background-color-na: #db8b00;
+    --btn-border-color-na: #cc8100;
 }

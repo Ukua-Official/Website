@@ -1,8 +1,7 @@
 <?php
 new UkuaPage(
     "Ukua | " . UkuaMessages::getMessage('Status', Ukua::getLang()),
-    "
-<main class='page'>
+    "<main class='page'>
     <section class='page-section'>
         <div class='container'>
             <div class='row p-2 status-table'>
@@ -29,12 +28,9 @@ new UkuaPage(
             </div>
         </div>
     </section>
-</main>
-",
-    "
-firebase.database().ref().child('.info/connected').on('value', connectedSnap => {
+</main>",
+    "firebase.database().ref().child('.info/connected').on('value', connectedSnap => {
     $('#authStatus').css('color', connectedSnap.val() === true ? '#3dcf00' : '#c80000');
     $('#dbStatus').css('color', connectedSnap.val() === true ? '#3dcf00' : '#c80000');
-});
-"
+});"
 );

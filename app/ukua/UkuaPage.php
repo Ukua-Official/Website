@@ -16,6 +16,11 @@ class UkuaPage
     /**
      * @var string|null
      */
+    protected static $script_defer;
+
+    /**
+     * @var string|null
+     */
     protected static $script;
 
     /**
@@ -27,13 +32,16 @@ class UkuaPage
      * UkuaPage constructor.
      * @param string $title
      * @param string $main
+     * @param string|null $script_defer
      * @param string|null $script
      */
-    public function __construct(string $title, string $main, string $script = null)
+    public function __construct(string $title, string $main, string $script_defer = null, string $script = null)
     {
         self::$title = $title;
         self::$main = $main;
+        self::$script_defer = $script_defer;
         self::$script = $script;
+
     }
 
     public static function make()
@@ -55,6 +63,14 @@ class UkuaPage
     public static function getMain(): string
     {
         return self::$main;
+    }
+
+    /**
+     * @return string|null
+     */
+    public static function getScriptDefer(): ?string
+    {
+        return self::$script_defer;
     }
 
     /**

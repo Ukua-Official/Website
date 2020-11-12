@@ -16,3 +16,17 @@
     border-radius: 0.5rem;
 }
 
+.status-table .item:first-child {
+    border-top: #000 solid 2px;
+}
+
+.status-table .item:last-child {
+    border-bottom: #000 solid 2px;
+}
+
+.status-table .item {
+    border-left: #000 solid 2px;
+    border-right: #000 solid 2px;
+    border-top: grey solid 1px;
+}
+

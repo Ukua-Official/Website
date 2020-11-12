@@ -2549,35 +2549,35 @@ a.btn.disabled, fieldset:disabled a.btn {
     pointer-events: none
 }
 
-.btn-primary {
+.ukua-btn {
     color: #fff;
     background-color: #0ea0ff;
     border-color: #0ea0ff
 }
 
-.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+.ukua-btn.focus, .ukua-btn:focus, .ukua-btn:hover {
     color: #fff;
     background-color: #008ce7;
     border-color: #0084da
 }
 
-.btn-primary.focus, .btn-primary:focus {
+.ukua-btn.focus, .ukua-btn:focus {
     box-shadow: 0 0 0 .2rem rgba(50, 174, 255, .5)
 }
 
-.btn-primary.disabled, .btn-primary:disabled {
+.ukua-btn.disabled, .ukua-btn:disabled {
     color: #fff;
     background-color: #0ea0ff;
     border-color: #0ea0ff
 }
 
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+.ukua-btn:not(:disabled):not(.disabled).active, .ukua-btn:not(:disabled):not(.disabled):active, .show > .ukua-btn.dropdown-toggle {
     color: #fff;
     background-color: #0084da;
     border-color: #007ccd
 }
 
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+.ukua-btn:not(:disabled):not(.disabled).active:focus, .ukua-btn:not(:disabled):not(.disabled):active:focus, .show > .ukua-btn.dropdown-toggle:focus {
     box-shadow: 0 0 0 .2rem rgba(50, 174, 255, .5)
 }
 

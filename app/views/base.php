@@ -1,6 +1,6 @@
+<!--suppress HtmlUnknownTarget -->
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
@@ -120,7 +120,7 @@
     </div>
 </footer>
 
-<span class="btn btn-primary btn-lg box-shadow scrollToTopButton" role="button">
+<span class="btn ukua-btn btn-lg box-shadow scrollToTopButton" role="button">
     <i class="fa fa-arrow-up"></i>
 </span>
 
@@ -172,7 +172,7 @@
                 "</a>" +
                 "</div>" +
                 "<div class='gradient item-3'>" +
-                "<a class='dropdown-item' href='/logout'>" +
+                "<a class='dropdown-item' href='/auth/logout'>" +
                 "<i class='fa fa-sign-out'></i>" +
                 "&nbsp;<?php echo UkuaMessages::getMessage('Logout', Ukua::getLang()); ?>" +
                 "</a>" +
@@ -184,7 +184,7 @@
 
             $('#navList').append(
                 "<li class='navigation-item'>" +
-                "<a class='navigation-link' href='/sign'>" +
+                "<a class='navigation-link' href='/auth/sign'>" +
                 "<i class='fa fa-sign-in'></i>" +
                 "&nbsp;<?php echo UkuaMessages::getMessage('Sign', Ukua::getLang()); ?>" +
                 "</a>" +
@@ -198,9 +198,14 @@
             $("#status").css('color', '#c80000')
         }
     }, true)
-</script>
-<?php if (UkuaPage::getScript() != null) { ?>
+</script defer>
+<?php if (UkuaPage::getScriptDefer() != null) { ?>
     <script defer>
+        <?php echo UkuaPage::getScriptDefer() ?>
+    </script>
+<?php } ?>
+<?php if (UkuaPage::getScript() != null) { ?>
+    <script>
         <?php echo UkuaPage::getScript() ?>
     </script>
 <?php } ?>

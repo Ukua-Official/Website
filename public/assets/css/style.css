@@ -43,49 +43,6 @@ body {
 }
 
 /*
-TODO: Or
- */
-.or {
-    position: relative;
-    color: var(--or);
-    font-size: 1.25rem;
-    font-weight: 900;
-}
-
-.or::before {
-    content: '';
-    height: 12rem;
-    width: 5px;
-    border-radius: 1rem;
-    background-image: linear-gradient(120deg, var(--gradient-1), var(--gradient-2));
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    transition: transform 300ms ease-in-out;
-}
-
-.or::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 2.5rem;
-    width: 2.5rem;
-    transform: translate(-50%, -50%);
-    background-image: linear-gradient(120deg, var(--gradient-1), var(--gradient-2));
-    border-radius: 50%;
-    z-index: -1;
-}
-
-@media (max-width: 991px) {
-    .or::before {
-        transform: translate(-50%, -50%) rotate(-90deg);
-    }
-}
-
-/*
 TODO: Navigation
  */
 
@@ -421,7 +378,16 @@ TODO: Main
     max-width: 650px;
     padding: 20px;
     margin: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .1)
+    box-shadow: 0 2px 10px var(--form-shadow)
+}
+
+.page-section input, .page-section input:focus {
+    background-color: var(--form-input);
+    color: var(--default-text-color)
+}
+
+.page-section form h1 {
+    padding-bottom: 10px;
 }
 
 .page-section form .button button {
@@ -470,9 +436,30 @@ TODO: Form
     z-index: 5;
 }
 
+.form-tooltips ul {
+    font-size: 10px;
+    background: var(--background-color);
+}
+
 .form-group input:focus + .form-tooltips {
     transform: translateY(5px) scaleY(1);
 }
+
+.form-text {
+    opacity: .9;
+}
+
+.form-text a {
+    color: #66c2ff;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.form-text a:hover {
+    color: #0ea0ff;
+    text-decoration: none;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
 
 .form-event {
     position: absolute;
@@ -480,9 +467,99 @@ TODO: Form
     transition: transform 100ms ease-in-out;
 }
 
+.form-event ul {
+    font-size: 12px;
+    background: var(--background-color);
+}
+
 .form-event.show {
     position: relative;
     transform: translateY(5px) scaleY(1);
+}
+
+.form-tooltips .li-sm,
+.form-event .li-sm {
+    font-size: 9px
+}
+
+/*
+TODO: ukua-btn
+ */
+.ukua-btn,
+.ukua-btn.disabled,
+.ukua-btn:disabled {
+    color: var(--btn-color);
+    background-color: var(--btn-background-color);
+    border-color: var(--btn-border-color);
+    transition: background-color .3s ease-in-out;
+}
+
+.ukua-btn.focus, .ukua-btn:focus, .ukua-btn:hover {
+    color: var(--btn-color);
+    background-color: var(--btn-background-color-fh);
+    border-color: var(--btn-border-color-fh)
+}
+
+.ukua-btn.focus, .ukua-btn:focus {
+    color: var(--btn-color);
+    box-shadow: 0 0 0 .2rem var(--btn-shadow)
+}
+
+.ukua-btn:not(:disabled):not(.disabled).active, .ukua-btn:not(:disabled):not(.disabled):active, .show > .ukua-btn.dropdown-toggle {
+    background-color: var(--btn-background-color-na);
+    border-color: var(--btn-border-color-na)
+}
+
+.ukua-btn:not(:disabled):not(.disabled).active:focus, .ukua-btn:not(:disabled):not(.disabled):active:focus, .show > .ukua-btn.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem var(--btn-shadow)
+}
+
+/*
+TODO: Or
+ */
+.or {
+    min-height: 105px;
+}
+
+.or p {
+    position: relative;
+    color: var(--or);
+!important;
+    font-size: 1.25rem !important;
+    font-weight: 900 !important;
+}
+
+.or p::before {
+    content: '';
+    height: 12rem;
+    width: 5px;
+    border-radius: 1rem;
+    background-image: linear-gradient(120deg, var(--gradient-1), var(--gradient-2));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: transform 300ms ease-in-out;
+}
+
+.or p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(120deg, var(--gradient-1), var(--gradient-2));
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@media (max-width: 991px) {
+    .or p::before {
+        transform: translate(-50%, -50%) rotate(-90deg);
+    }
 }
 
 /*

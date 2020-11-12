@@ -11,15 +11,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/Bootstrap-Chat.css" rel="stylesheet">
     <link href="assets/css/dropdown.compiled.css" rel="stylesheet">
-    <link href="assets/css/Footer-Basic.css" rel="stylesheet">
-    <link href="assets/css/Footer-Dark.css" rel="stylesheet">
     <link href="assets/css/Footer-White.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css" rel="stylesheet">
+    <link href="assets/css/Scroll-To-Top-Button.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
-<body style="width: 100vw;height: 100vh;display: flex;align-items: center;flex-direction: column;justify-content: space-between;">
+<body style="display: flex;align-items: center;flex-direction: column;justify-content: space-between;">
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
     <div class="container-fluid"><a class="navbar-brand pulse animated infinite logo" href="#">Ukua</a>
         <button class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse"><span class="sr-only">Toggle navigation</span><span
@@ -78,15 +77,33 @@
         </div>
     </div>
 </nav>
-<main class="page" style="height: 100%;display: flex;align-items: center;justify-content: center;">
-    <section class="portfolio-block block-intro">
+<main class="page">
+    <section class="portfolio-block call-to-action">
         <div class="container">
-            <div class="about-me">
-                <p style="font-size: 30px;"><strong>404 - Page introuvable</strong></p>
+            <div class="row status-table p-2">
+                <div class="col-sm-12 p-2 item">
+                    <div class="row">
+                        <div class="col text-left">
+                            <h5>Authentification</h5>
+                        </div>
+                        <div class="col text-right"><span class="spinner-grow spinner-grow-sm" role="status"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 p-2 item">
+                    <div class="row">
+                        <div class="col text-left">
+                            <h5>Base de données</h5>
+                        </div>
+                        <div class="col text-right"><span class="spinner-grow spinner-grow-sm" role="status"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </main>
+<div></div>
 <footer class="page-footer footer-white" style="padding-bottom: 10px;">
     <div class="shadow footer-spc"></div>
     <div class="container">
@@ -131,9 +148,11 @@
             Wesley</strong><br><strong>Ukua</strong> © 2020 - Tous droits réservés.</p>
     </div>
 </footer>
+<a class="btn btn-primary btn-lg box-shadow" href="#" id="top" role="button"><i class="fa fa-arrow-up"></i></a>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
+<script src="assets/js/Scroll-To-Top-Button.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/validate.js"></script>

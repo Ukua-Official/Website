@@ -2,10 +2,20 @@
     --background-color: white;
     --navigation-inactive: white;
     --navigation-active: hsla(0, 0%, 90%, 0.9);
-    --footer-color: black;
+    --footer-color: #212529;
     --footer-background: white;
     --gradient-1: #7f70f5;
     --gradient-2: #0ea0ff;
     --or: white;
-    --default-text-color: black;
+    --default-text-color: #212529;
+    --form-shadow: rgba(0, 0, 0, .1);
+    --form-input: white;
+    --btn-color: white;
+    --btn-background-color: #0ea0ff;
+    --btn-border-color: #0ea0ff;
+    --btn-background-color-fh: #008ce7;
+    --btn-border-color-fh: #0084da;
+    --btn-shadow: rgba(50, 174, 255, .5);
+    --btn-background-color-na: #0084da;
+    --btn-border-color-na: #007ccd;
 }
