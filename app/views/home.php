@@ -9,5 +9,8 @@ new UkuaPage(
             </div>
         </div>
     </section>
-</main>"
+</main>",
+    "$(document).ready(() => {
+    window.location.replace(firebase.auth().currentUser ? '/profile' : '/auth/sign');
+})"
 );

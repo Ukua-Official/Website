@@ -462,9 +462,10 @@ TODO: Form
 
 
 .form-event {
+    color: var(--default-text-color);
     position: absolute;
     transform: translateY(5px) scaleY(0);
-    transition: transform 100ms ease-in-out;
+    transition: transform 100ms ease-in-out, color 300ms ease-in-out;
 }
 
 .form-event ul {
@@ -475,6 +476,16 @@ TODO: Form
 .form-event.show {
     position: relative;
     transform: translateY(5px) scaleY(1);
+}
+
+.form-event.event-success {
+    color: #28a745;
+    transition: color 300ms ease-in-out;
+}
+
+.form-event.event-error {
+    color: #dc3545;
+    transition: color 300ms ease-in-out;
 }
 
 .form-tooltips .li-sm,
