@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <title>Home - Ukua</title>
+    <meta content="Ukua" name="description">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href="assets/css/dark.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navigation-bar navigation-expand-lg fixed-top gradient">
+    <div class="container-fluid">
+        <a class="navigation-title pulse animated infinite logo" href="/">Ukua</a>
+        <button class="navigation-toggler" data-target="#navbarNav" data-toggle="collapse">
+            <span class="navigation-toggler-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+        <div class="collapse navigation-collapse" id="navbarNav">
+            <ul class="navigation navigation-list ml-auto" id="navList">
+                <li class="navigation-item">
+                    <a class="navigation-link" href="/home">
+                        <i class="fa fa-home"></i>
+                        &nbsp;Accueil
+                    </a>
+                </li>
+                <li class="navigation-item" id="navLoading">
+                    <a class="navigation-link loading">
+                        <i class="spinner-border spinner-border-sm" role="status"></i>
+                        &nbsp;Chargement...
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="page">
+    <section class="page-info">
+        <div class="container">
+            <div class="row p-2 status-table">
+                <div class="col-sm-12 p-2 status-item">
+                    <div class="row">
+                        <div class="col text-left">
+                            <h5>Authentification</h5>
+                        </div>
+                        <div class="col text-right">
+                            <span class="spinner-grow spinner-grow-sm" id="authStatus" role="status"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 p-2 status-item">
+                    <div class="row">
+                        <div class="col text-left">
+                            <h5>Base de données</h5>
+                        </div>
+                        <div class="col text-right">
+                            <span class="spinner-grow spinner-grow-sm" id="dbStatus" role="status"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="shadow footer-spacer"></div>
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-start">
+            <div class="col-sm-12 col-md-12 col-lg-4 item text">
+                <h3>
+                    <i class="fa fa-bullhorn"></i>
+                    &nbsp;Qu'est-ce dont Ukua ?
+                </h3>
+                <p class="text-left">
+                    Ukua est un service de messagerie entre proches amis, professionnels... cela vous permet de faire de
+                    nouvelle rencontre a travers le monde... nous nous livrons à écouter nos utilisateurs pour nous
+                    améliorer et vous satisfaire...
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 item">
+                <h3>
+                    <i class="fa fa-external-link"></i>
+                    &nbsp;Liens
+                </h3>
+                <ul>
+                    <li>
+                        <a class="d-flex align-items-center" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                            &nbsp;Équipe
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                            &nbsp;Partenaire
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                            &nbsp;Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 item">
+                <h3>
+                    <i class="fa fa-list-alt"></i>
+                    &nbsp;Autres
+                </h3>
+                <ul>
+                    <li>
+                        <a class="d-flex align-items-center" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                            &nbsp;Mentions légales
+                        </a>
+                        <a class="d-flex align-items-center" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                            &nbsp;Conditions d'utilisations
+                        </a>
+                        <a class="d-flex align-items-center" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                            &nbsp;Status des serveurs&nbsp;
+                            <i class="fa fa-server" id="status"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">
+            Développer avec&nbsp;
+            <i class="fa fa-heart"></i>
+            &nbsp;par <strong>Levasseur Wesley</strong>
+            <br/>
+            <strong>Ukua</strong> &copy; 2020 - Tous droits réservés.
+        </p>
+    </div>
+</footer>
+
+<span class="btn btn-primary btn-lg box-shadow scrollToTopButton" role="button">
+    <i class="fa fa-arrow-up"></i>
+</span>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+<script defer src="assets/js/firebase-init.js"></script>
+<script defer src="assets/js/main.js"></script>
+<script defer src="assets/js/loading.js"></script>
+
+</body>
+
+</html>

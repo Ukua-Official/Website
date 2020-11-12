@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteRule ^.*app/.*$ - [F,L]
+RewriteRule ^.*env/.*$ - [F,L]
+RewriteRule ^.*vendor/.*$ - [F,L]
+ErrorDocument 403 /index_403.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]

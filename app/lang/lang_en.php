@@ -1,0 +1,27 @@
+<?php
+UkuaMessages::loadMessages('en', [
+    'Home' => "Home",
+    'Loading' => "Loading",
+    'What-is-Ukua?' => "What is Ukua?",
+    'Ukua-is' => "Ukua is a messaging service between close friends, professionals ... it allows you to meet new people around the world ... we listen to our users to improve and satisfy you ...",
+    'Links' => "Links",
+    'Team' => "Team",
+    'Partner' => "Partner",
+    'Contact' => "Contact",
+    'Others' => "Others",
+    'Legals-Notices' => "Legals Notices",
+    'Conditions-of-use' => "Conditions of use",
+    'Servers-status' => "Servers status",
+    'Status' => "Status",
+    'Authentication' => "Authentication",
+    'Database' => "Database",
+    'Developed-with' => "Developed with",
+    'by' => "by",
+    'All-rights-reserved' => "All rights reserved",
+    'Friends' => "Friends",
+    'Mesages' => "Messages",
+    'Profile' => "Profile",
+    'Settings' => "Settings",
+    'Logout' => "Sign Out",
+    'Sign' => "Sign In"
+]);
