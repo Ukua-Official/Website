@@ -23,5 +23,7 @@ UkuaMessages::loadMessages('fr', [
     'Profile' => "Profil",
     'Settings' => "Paramètres",
     'Logout' => "Se déconnecter",
-    'Sign' => "Se connecter"
+    'Sign' => "Se connecter",
+    'Access-Forbidden' => "Accès Interdit",
+    'Access-Not-Found' => "Accès Introuvable"
 ]);

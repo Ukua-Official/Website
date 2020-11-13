@@ -23,5 +23,7 @@ UkuaMessages::loadMessages('en', [
     'Profile' => "Profile",
     'Settings' => "Settings",
     'Logout' => "Sign Out",
-    'Sign' => "Sign In"
+    'Sign' => "Sign In",
+    'Access-Forbidden' => "Access Forbidden",
+    'Access-Not-Found' => "Access Not Found"
 ]);

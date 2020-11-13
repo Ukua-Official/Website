@@ -5,7 +5,7 @@ new UkuaPage(
     <section class='page-section'>
         <div class='container'>
             <div class='page-title strong'>
-                <p>403 - Accès Interdit</p>
+                <p>403 - " . UkuaMessages::getMessage('Access-Forbidden', Ukua::getLang()) . "</p>
             </div>
         </div>
     </section>
