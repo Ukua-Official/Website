@@ -1,7 +1,3 @@
-$(document).ready(() => {
-    if (firebase.auth()) window.location.replace('/profile');
-})
-
 $('form#signIn').submit(function (event) {
     let loadingEvent = $('form#signIn .form-event')
     let loadingText = $('form#signIn .form-event #signInText')

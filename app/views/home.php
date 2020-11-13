@@ -11,6 +11,8 @@ new UkuaPage(
     </section>
 </main>",
     "$(document).ready(() => {
-    window.location.replace(firebase.auth().currentUser ? '/profile' : '/auth/sign');
+    firebase.auth().onAuthStateChanged(function (user) {
+        window.location.replace(user ? '/profile' : '/auth/sign')
+    })
 })"
 );

@@ -52,7 +52,7 @@ $('form#signUp').submit(function (event) {
                     if (username === element.val().username)
                         return true
                 }))
-                    firebase.auth().setPersistence(remember_me ? firebase.auth.Auth.Persistence.qd : firebase.auth.Auth.Persistence.sd)
+                    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.sd)
                         .then(() => {
                             firebase.auth().createUserWithEmailAndPassword(email, password)
                                 .then(function () {

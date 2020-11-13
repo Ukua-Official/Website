@@ -352,6 +352,15 @@ TODO: Navigation Dropdown
 TODO: Main
  */
 
+.page {
+    opacity: 0;
+}
+
+.page.show {
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out;
+}
+
 .page-section {
     padding-bottom: 60px;
     padding-top: 60px;

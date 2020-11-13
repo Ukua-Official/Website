@@ -44,7 +44,7 @@ class Ukua
         self::$router->map('GET', '/status', function () {
             require_once __DIR__ . '/../../app/views/status.php';
         }, 'status');
-        //TODO: @Route 'contact'
+        /*//TODO: @Route 'contact'
         self::$router->map('GET', '/contact', function () {
             require_once __DIR__ . '/../../app/views/contact.php';
         }, 'contact');
@@ -52,7 +52,7 @@ class Ukua
         //TODO: @Route 'profile'
         self::$router->map('GET', '/profile', function () {
             require_once __DIR__ . '/../../app/views/profile.php';
-        }, 'profile');
+        }, 'profile');*/
 
         //TODO: @Route 'auth-sign'
         self::$router->map('GET', '/auth/sign', function () {
@@ -64,7 +64,7 @@ class Ukua
             require_once __DIR__ . '/../../app/views/auth/logout.php';
         }, 'auth-logout');
 
-        //TODO: @Route 'auth-forgot'
+        /*//TODO: @Route 'auth-forgot'
         self::$router->map('GET', '/auth/forgot', function () {
             require_once __DIR__ . '/../../app/views/auth/forgot.php';
         }, 'auth-forgot');
@@ -112,7 +112,7 @@ class Ukua
         //TODO: @Route 'message-create'
         self::$router->map('POST', '/message/create/', function () {
             require_once __DIR__ . '/../../app/forms/messages/create.php';
-        }, 'message-create');
+        }, 'message-create');*/
     }
 
     /**

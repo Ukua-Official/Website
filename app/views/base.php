@@ -165,6 +165,7 @@
                     "</a>" +
                     "</li>")
             }
+            $('main.page').addClass('show')
         })
     })
     try {

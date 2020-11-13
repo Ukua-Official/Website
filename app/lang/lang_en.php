@@ -19,7 +19,7 @@ UkuaMessages::loadMessages('en', [
     'by' => "by",
     'All-rights-reserved' => "All rights reserved",
     'Friends' => "Friends",
-    'Mesages' => "Messages",
+    'Messages' => "Messages",
     'Profile' => "Profile",
     'Settings' => "Settings",
     'Logout' => "Sign Out",
