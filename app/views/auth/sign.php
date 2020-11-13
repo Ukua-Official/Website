@@ -1,7 +1,7 @@
 <?php
 new UkuaPage(
     'Ukua | Sign',
-    "<!--suppress HtmlFormInputWithoutLabel, HtmlUnknownTarget -->
+    /** @lang HTML */ "<!--suppress HtmlFormInputWithoutLabel, HtmlUnknownTarget -->
 <main class='page'>
     <section class='page-section'>
         <div class='container'>
@@ -45,9 +45,9 @@ new UkuaPage(
                             </div>
                         </div>
                         <div class='form-group'>
-                            <small class='form-text text-center'>
-                                <input name='remember_me' type='checkbox'>
-                                &nbsp;Se souvenir de moi?
+                            <small class='form-check text-center'>
+                                <input name='remember_me' type='checkbox' class='form-check-input'>
+                                <label class='form-check-label'>&nbsp;Se souvenir de moi?</label>
                             </small>
                         </div>
                         <div class='form-event'>
@@ -188,7 +188,7 @@ new UkuaPage(
         </div>
     </section>
 </main>",
-    "$(document).ready(() => {
+    /** @lang JavaScript */ "$(document).ready(() => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) window.location.replace('/profile')
     })

@@ -1,7 +1,7 @@
 <?php
 new UkuaPage(
     "Ukua | 403",
-    "<main class='page'>
+    /** @lang HTML */ "<main class='page'>
     <section class='page-section'>
         <div class='container'>
             <div class='page-title strong'>
@@ -9,6 +9,5 @@ new UkuaPage(
             </div>
         </div>
     </section>
-</main>",
-    ""
+</main>"
 );

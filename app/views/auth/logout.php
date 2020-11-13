@@ -1,5 +1,8 @@
 <?php
-new UkuaPage("Ukua | Logout","", "$(document).ready(() => {
+new UkuaPage(
+    "Ukua | Logout",
+    /** @lang HTML */ "",
+    /** @lang JavaScript */ "$(document).ready(() => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user)
             firebase.auth().signOut().then(function () {

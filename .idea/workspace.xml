@@ -35,7 +35,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/altorouter/altorouter" />
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -66,7 +66,7 @@
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -114,6 +114,8 @@
       <workItem from="1604759301925" duration="21401000" />
       <workItem from="1604854390245" duration="13659000" />
       <workItem from="1605038718183" duration="29665000" />
+      <workItem from="1605261324793" duration="77000" />
+      <workItem from="1605261415705" duration="3305000" />
     </task>
     <servers />
   </component>
@@ -145,9 +147,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="659" y="467" key="NewPhpFileDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1604861000780" />
-    <state x="328" y="117" key="SettingsEditor" timestamp="1604854339932">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="375" y="96" key="SettingsEditor" timestamp="1605261398632">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="375" y="96" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1605261398632" />
     <state x="328" y="117" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1604854339932" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1605192520724">
       <screen x="0" y="0" width="1920" height="1050" />

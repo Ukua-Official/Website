@@ -502,6 +502,10 @@ TODO: Form
     font-size: 9px
 }
 
+.form-check label {
+    margin-top: 2px;
+}
+
 /*
 TODO: ukua-btn
  */

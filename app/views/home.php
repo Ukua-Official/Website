@@ -1,7 +1,7 @@
 <?php
 new UkuaPage(
     "Ukua",
-    "<main class='page'>
+    /** @lang HTML */ "<main class='page'>
     <section class='page-section'>
         <div class='container'>
             <div class='page-title strong'>
@@ -10,7 +10,7 @@ new UkuaPage(
         </div>
     </section>
 </main>",
-    "$(document).ready(() => {
+    /** @lang JavaScript */ "$(document).ready(() => {
     firebase.auth().onAuthStateChanged(function (user) {
         window.location.replace(user ? '/profile' : '/auth/sign')
     })
