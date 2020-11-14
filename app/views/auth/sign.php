@@ -178,7 +178,7 @@ new UkuaPage(
                                 S'inscrire
                             </button>
                             <small class='form-text'>
-                                En cliquant sur ce bouton, vous accepter nos <a href='/conditions-of-use'>Conditions
+                                En cliquant sur ce bouton, vous accepter nos <a href='/legals'>Conditions
                                 d'Utilisations</a>.
                             </small>
                         </div>
@@ -242,7 +242,7 @@ $('form#signUp').submit(function (event) {
                     if (username === element.val().username)
                         return true
                 }))
-                    firebase.auth().setPersistence(remember_me ? firebase.auth.Auth.Persistence.qd : firebase.auth.Auth.Persistence.sd)
+                    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.sd)
                         .then(() => {
                             firebase.auth().createUserWithEmailAndPassword(email, password)
                                 .then(function () {

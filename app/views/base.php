@@ -84,10 +84,10 @@
                 </h3>
                 <ul>
                     <li>
-                        <a class="d-flex align-items-center" href="/legals-notices">
+                        <a class="d-flex align-items-center" href="/legals">
                             <i class="fa fa-chevron-right"></i>&nbsp;<?php echo UkuaMessages::getMessage('Legals-Notices', Ukua::getLang()) ?>
                         </a>
-                        <a class="d-flex align-items-center" href="/conditions-of-use">
+                        <a class="d-flex align-items-center" href="/legals">
                             <i class="fa fa-chevron-right"></i>&nbsp;<?php echo UkuaMessages::getMessage('Conditions-of-use', Ukua::getLang()) ?>
                         </a>
                         <a class="d-flex align-items-center" href="/status">
@@ -137,7 +137,7 @@
                     "</li>" +
                     "<li class='navigation-item dropdown'>" +
                     "<a class='dropdown-toggle navigation-link' data-toggle='dropdown'>" +
-                    "<img alt='X' class='rounded-circle' height='32' loading='lazy' src='" + (user.photoUrl != null ? user.photoUrl : "https://www.gravatar.com/avatar?s=128") + "' width='32'>" +
+                    "<img alt='X' class='rounded-circle' height='20' loading='lazy' src='" + (user.photoUrl != null ? user.photoUrl : "https://www.gravatar.com/avatar?s=128") + "' width='20'>" +
                     "</a>" +
                     "<div class='dropdown-menu border-0 p-0'>" +
                     "<div class='gradient item-1'>" +

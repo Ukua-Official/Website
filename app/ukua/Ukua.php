@@ -54,6 +54,11 @@ class Ukua
             require_once __DIR__ . '/../../app/views/profile.php';
         }, 'profile');*/
 
+        //TODO: @Route 'legals'
+        self::$router->map('GET', '/legals', function () {
+            require_once __DIR__ . '/../../app/views/legals.php';
+        }, 'legals');
+
         //TODO: @Route 'auth-sign'
         self::$router->map('GET', '/auth/sign', function () {
             require_once __DIR__ . '/../../app/views/auth/sign.php';

@@ -38,6 +38,21 @@ body {
     background: var(--background-color);
 }
 
+a {
+    color: #0ea0ff;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+a:hover {
+    color: #66c2ff;
+    text-decoration: none;
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.font-underline {
+    text-decoration: underline;
+}
+
 .gradient {
     background-image: linear-gradient(120deg, var(--gradient-1), var(--gradient-2));
 }
@@ -373,6 +388,12 @@ TODO: Main
     margin: 0 auto
 }
 
+.page-section .page-subtitle {
+    font-size: 98%;
+    margin: 0 auto
+}
+
+.page-section .page-subtitle.strong,
 .page-section .page-title.strong {
     font-weight: bold;
 }
@@ -381,6 +402,22 @@ TODO: Main
     font-size: 2em;
     font-weight: 300;
     margin-bottom: 30px;
+}
+
+.page-section.block {
+    max-width: 1200px;
+    padding: 20px;
+    margin: auto auto 30px;
+    box-shadow: 0 2px 10px var(--form-shadow)
+}
+
+.page-section.block .page-title {
+    padding-bottom: 30px;
+}
+
+.page-section.block p:not(.page-title) {
+    font-size: 95%;
+    font-weight: 400
 }
 
 .page-section form {
@@ -410,6 +447,7 @@ TODO: Main
         padding-top: 100px
     }
 
+    .page-section.block,
     .page-section form {
         padding: 50px
     }
@@ -457,18 +495,6 @@ TODO: Form
 .form-text {
     opacity: .9;
 }
-
-.form-text a {
-    color: #66c2ff;
-    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
-}
-
-.form-text a:hover {
-    color: #0ea0ff;
-    text-decoration: none;
-    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
-}
-
 
 .form-event {
     color: var(--default-text-color);
