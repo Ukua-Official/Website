@@ -1,10 +1,25 @@
 <?php
-new UkuaPage(
-    '',
-    /* @lang HTML */ "<main class='page show'>
+
+class UkuaLegalNotice
+{
+
+    public static function get(): string
+    {
+        switch (strtolower(Ukua::getLang())):
+            default:
+                return self::getFr();
+                endswitch;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getFr(): string
+    {
+        return /* @lang HTML */ "<main class='page show'>
     <section class='page-section block'>
         <div class='container'>
-            <p class='page-title strong'>Mentions légales</p>
+            <p class='page-title strong'>Mentions légales et politique de confidentialité</p>
             <div class='text-left'>
                 <p>
                     L'entreprise individuelle <strong>Ukua</strong>, soucieuse des droits des individus, notamment au
@@ -518,5 +533,12 @@ new UkuaPage(
             </div>
         </div>
     </section>
-</main>",
+</main>";
+    }
+
+}
+
+new UkuaPage(
+    "Ukua | " . UkuaMessages::getMessage('Legal-notice-privacy-policy', Ukua::getLang()),
+    /* @lang HTML */ UkuaLegalNotice::get(),
 );

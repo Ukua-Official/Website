@@ -25,5 +25,6 @@ UkuaMessages::loadMessages('en', [
     'Logout' => "Sign Out",
     'Sign' => "Sign In",
     'Access-Forbidden' => "Access Forbidden",
-    'Access-Not-Found' => "Access Not Found"
+    'Access-Not-Found' => "Access Not Found",
+    'Legal-notice-privacy-policy' => "Legal notice and privacy policy"
 ]);

@@ -60,8 +60,8 @@ class Ukua
         }, 'legals');
 
         //TODO: @Route 'auth-sign'
-        self::$router->map('GET', '/auth/sign', function () {
-            require_once __DIR__ . '/../../app/views/auth/sign.php';
+        self::$router->map('GET', '/auth', function () {
+            require_once __DIR__ . '/../../app/views/auth/auth.php';
         }, 'auth-sign');
 
         //TODO: @Route 'auth-logout'

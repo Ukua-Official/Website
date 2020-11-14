@@ -1,6 +1,6 @@
 <?php
 new UkuaPage(
-    'Ukua | Sign',
+    "Ukua | " . UkuaMessages::getMessage('Authentication', Ukua::getLang()),
     /** @lang HTML */ "<!--suppress HtmlFormInputWithoutLabel, HtmlUnknownTarget -->
 <main class='page'>
     <section class='page-section'>

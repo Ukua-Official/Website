@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="709e9013-7770-461e-b9ae-65793924a0a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/index_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/auth/sign.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/sign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/lang_en.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/lang_en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/lang_fr.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/lang_fr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ukua/Ukua.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ukua/Ukua.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/auth/sign.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/legals.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/legals.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +93,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -111,7 +126,7 @@
       <workItem from="1605038718183" duration="29665000" />
       <workItem from="1605261324793" duration="77000" />
       <workItem from="1605261415705" duration="3937000" />
-      <workItem from="1605280593687" duration="12261000" />
+      <workItem from="1605280593687" duration="13665000" />
     </task>
     <servers />
   </component>

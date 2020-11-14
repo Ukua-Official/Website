@@ -160,7 +160,7 @@
             } else {
                 $('#navList').append(
                     "<li class='navigation-item'>" +
-                    "<a class='navigation-link' href='/auth/sign'>" +
+                    "<a class='navigation-link' href='/auth'>" +
                     "<i class='fa fa-sign-in'></i>&nbsp;<?php echo UkuaMessages::getMessage('Sign', Ukua::getLang()); ?>" +
                     "</a>" +
                     "</li>")

@@ -25,5 +25,6 @@ UkuaMessages::loadMessages('fr', [
     'Logout' => "Se déconnecter",
     'Sign' => "Se connecter",
     'Access-Forbidden' => "Accès Interdit",
-    'Access-Not-Found' => "Accès Introuvable"
+    'Access-Not-Found' => "Accès Introuvable",
+    'Legal-notice-privacy-policy' => "Mentions légales et politique de confidentialité"
 ]);
