@@ -1,6 +1,7 @@
 <?php
 new UkuaPage(
     "Ukua | 404",
+    UkuaMessages::getMessage('404-desc', Ukua::getLang()),
     /** @lang HTML */ "<main class='page'>
     <section class='page-section'>
         <div class='container'>
@@ -9,5 +10,5 @@ new UkuaPage(
             </div>
         </div>
     </section>
-</main>"
+</main>",
 );

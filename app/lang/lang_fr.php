@@ -26,5 +26,11 @@ UkuaMessages::loadMessages('fr', [
     'Sign' => "Se connecter",
     'Access-Forbidden' => "Accès Interdit",
     'Access-Not-Found' => "Accès Introuvable",
-    'Legal-notice-privacy-policy' => "Mentions légales et politique de confidentialité"
+    'Legal-notice-privacy-policy' => "Mentions légales et politique de confidentialité",
+    'Status-desc' => "Vérifier le statut de l'infrastructure d'Ukua.(Authentification, base de données...)",
+    'Legals-desc' => "Afficher toutes les informations concernant nos mentions légales et notre politique de confidentialité.",
+    '404-desc' => "",
+    '403-desc' => "",
+    'Logout-desc' => "",
+    'Auth-desc' => ""
 ]);

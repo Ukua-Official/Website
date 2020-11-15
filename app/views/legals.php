@@ -8,7 +8,7 @@ class UkuaLegalNotice
         switch (strtolower(Ukua::getLang())):
             default:
                 return self::getFr();
-                endswitch;
+        endswitch;
     }
 
     /**
@@ -493,6 +493,34 @@ class UkuaLegalNotice
                         <i class='fa fa-chevron-right'></i>
                         &nbsp;Google analytics : permet de mesurer l'audience du site.
                     </span>
+                     <br/>
+                    <span class='m-2 p-2'>
+                        <i class='fa fa-chevron-right'></i>
+                        &nbsp;Google tag manager : facilite l’implémentation des tags sur les pages et permet de gérer les 
+                        balises Google.
+                    </span>
+                     <br/>
+                    <span class='m-2 p-2'>
+                        <i class='fa fa-chevron-right'></i>
+                        &nbsp;Google Adsense : régie publicitaire de Google utilisant les sites web ou les vidéos YouTube 
+                        commesupport pour ses annonces.
+                    </span>
+                     <br/>
+                    <span class='m-2 p-2'>
+                        <i class='fa fa-chevron-right'></i>
+                        &nbsp;Google Dynamic Remarketing : permet de vous proposer de la publicité dynamique en fonction 
+                        desprécédentes recherches.
+                    </span>
+                     <br/>
+                    <span class='m-2 p-2'>
+                        <i class='fa fa-chevron-right'></i>
+                        &nbsp;Google Adwords Conversion : outil de suivi des campagnes publicitaires adwords.
+                    </span>
+                     <br/>
+                    <span class='m-2 p-2'>
+                        <i class='fa fa-chevron-right'></i>
+                        &nbsp;DoubleClick : cookies publicitaires de Google pour diffuser des bannières.
+                    </span>
                     <br/>
                     <span class='m-2 p-2'>
                         <i class='fa fa-chevron-right'></i>
@@ -540,5 +568,6 @@ class UkuaLegalNotice
 
 new UkuaPage(
     "Ukua | " . UkuaMessages::getMessage('Legal-notice-privacy-policy', Ukua::getLang()),
+    UkuaMessages::getMessage('Legals-desc', Ukua::getLang()),
     /* @lang HTML */ UkuaLegalNotice::get(),
 );

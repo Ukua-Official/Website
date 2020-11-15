@@ -1,6 +1,7 @@
 <?php
 new UkuaPage(
     "Ukua | Logout",
+    UkuaMessages::getMessage('Logout-desc', Ukua::getLang()),
     /** @lang HTML */ "",
     /** @lang JavaScript */ "$(document).ready(() => {
     firebase.auth().onAuthStateChanged(function (user) {

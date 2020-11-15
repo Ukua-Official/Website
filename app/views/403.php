@@ -1,6 +1,7 @@
 <?php
 new UkuaPage(
     "Ukua | 403",
+    UkuaMessages::getMessage('403-desc', Ukua::getLang()),
     /** @lang HTML */ "<main class='page'>
     <section class='page-section'>
         <div class='container'>

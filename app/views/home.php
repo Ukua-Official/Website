@@ -1,6 +1,7 @@
 <?php
 new UkuaPage(
     "Ukua",
+    UkuaMessages::getMessage('Ukua-is', Ukua::getLang()),
     /** @lang HTML */ "<main class='page'>
     <section class='page-section'>
         <div class='container'>
