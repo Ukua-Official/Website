@@ -5,8 +5,20 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
     <title><?php echo UkuaPage::getTitle(); ?></title>
-    <meta content="Ukua" name="description">
-    <link href="/public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta content="<?php echo UkuaPage::getTitle(); ?>" name="twitter:title">
+    <meta content="Ukua - Chat" name="description">
+    <meta content="Ukua - Chat" name="twitter:description">
+    <meta content="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_180x180.png" name="twitter:image">
+    <meta content="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_180x180.png" property="og:image">
+    <meta content="website" property="og:type">
+    <meta content="summary" name="twitter:card">
+    <link href="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_180x180.png" rel="icon" sizes="180x180" type="image/png">
+    <link href="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_192x192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_512x512.png" rel="icon" sizes="512x512" type="image/png">
+    <link href="/public/assets/manifest.json" rel="manifest">
+    <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link href="/public/assets/css/<?php echo UkuaPage::getTheme(); ?>.css" rel="stylesheet">

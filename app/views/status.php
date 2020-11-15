@@ -29,6 +29,7 @@ new UkuaPage(
         </div>
     </section>
 </main>",
+    "",
     /** @lang JavaScript */ "firebase.database().ref().child('.info/connected').on('value', connectedSnap => {
     $('#authStatus').css('color', connectedSnap.val() === true ? '#3dcf00' : '#c80000');
     $('#dbStatus').css('color', connectedSnap.val() === true ? '#3dcf00' : '#c80000');

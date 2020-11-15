@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Projects - Ukua</title>
+    <title>Recherche un ami | Ukua</title>
     <meta name="twitter:description" content="Ukua - Chat">
     <meta name="twitter:image" content="../assets/img/logo_light.png">
     <meta property="og:type" content="website">
-    <meta name="description" content="Ukua - Chat">
     <meta property="og:image" content="../assets/img/logo_light.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ukua">
+    <meta name="description" content="Rechercher vos amis parmis les utilisateurs inscrits.">
     <link rel="icon" type="image/png" sizes="200x200" href="assets/img/logo_light.png">
     <link rel="icon" type="image/png" sizes="200x200" href="assets/img/logo_light.png">
     <link rel="icon" type="image/png" sizes="200x200" href="assets/img/logo_light.png">
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body style="filter: invert(0%);">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
         <div class="container-fluid"><a class="navbar-brand pulse animated infinite logo" href="#">Ukua</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
@@ -63,52 +63,110 @@
         </div>
         </div>
     </nav>
+    <div>
+        <div class="container"></div>
+    </div>
     <main class="page projets-page">
         <section class="portfolio-block project-no-images">
             <div class="container">
-                <div class="heading">
-                    <h2 class="shadow p-2" style="margin-bottom: 0px;">Amis</h2>
-                </div>
                 <section class="portfolio-block call-to-action border-bottom" style="padding-top: 0px;">
-                    <div class="container">
-                        <div class="row d-flex justify-content-end">
-                            <div class="col-sm-5 col-md-5 col-lg-7 text__c" style="padding: 15px;margin-right: 30px;">
-                                <h4>3 amis</h4>
-                                <h4>2 connectées</h4>
-                                <h4>1 déconnectées</h4>
-                                <h4>5 invitations</h4>
-                            </div>
-                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center"><button class="btn btn-outline-primary btn-lg" type="button"><i class="fa fa-user-plus"></i>&nbsp;Chercher des amis<span class="badge badge-pill badge-danger float-right" style="margin-top: -5px;margin-right: -10px;">5</span></button></div>
+                    <form style="max-width: 1200px;">
+                        <h2 class="text-center" style="padding-bottom: 50px;">Profil</h2>
+                        <div class="form-event show">
+                            <ul class="list-unstyled border rounded shadow-sm p-2" style="font-size: 10px;color: rgb(0,0,0);background: #fff;">
+                                <li class="text-center" style="font-size: 12px;"><span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Chargement...</li>
+                            </ul>
                         </div>
-                    </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text" style="width: 165px;"><i class="fa fa-photo"></i>&nbsp;Photo de profil</span></div><input class="form-control" type="text" required="" minlength="3" maxlength="16" placeholder="N/A"
+                                            inputmode="url" autocomplete="off">
+                                        <div class="input-group-append"><button class="btn btn-primary btn-block" type="submit"><i class="fa fa-edit"></i></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-id-card-o"></i>&nbsp;Adresse mail</span></div><input class="form-control" type="text" required="" minlength="3" maxlength="16" placeholder="mailpro.levasseur@icloud.com"
+                                            inputmode="email" autocomplete="off">
+                                        <div class="input-group-append"><button class="btn btn-primary btn-block" type="submit"><i class="fa fa-edit"></i></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text" style="width: 165px;"><i class="fa fa-tag"></i>&nbsp;Nom d'utilisateur</span></div><input class="form-control" type="text" required="" minlength="3" maxlength="16" placeholder="wesley.levasseur"
+                                            autocomplete="off">
+                                        <div class="input-group-append"><button class="btn btn-primary btn-block" type="submit"><i class="fa fa-edit"></i></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-birthday-cake"></i>&nbsp; Anniversaire</span></div><input class="form-control" type="text" placeholder="N/A" autocomplete="off">
+                                        <div class="input-group-append"><button class="btn btn-primary btn-block" type="submit"><i class="fa fa-edit"></i></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-center">
+                                <div class="form-group" style="width: fit-content;">
+                                    <div class="input-group" style="width: fit-content;">
+                                        <div class="input-group-prepend"><span class="input-group-text" style="border-radius: .25rem;"><i class="fa fa-users"></i>&nbsp; 3 amis</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-center">
+                                <div class="form-group" style="width: fit-content;">
+                                    <div class="input-group" style="width: fit-content;">
+                                        <div class="input-group-prepend"><span class="input-group-text" style="border-radius: .25rem;"><i class="fa fa-envelope"></i>&nbsp; 3 discussions</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </section>
-                <div class="row">
+                <div class="row" style="filter: invert(0%);">
                     <div class="col-md-6 col-lg-4">
-                        <div class="project-card-no-image">
-                            <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Ophélie</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-send-o"></i></a>
+                        <div class="project-card-no-image offline">
+                            <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Josianne</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-plus"></i></a>
                             <a
                                 class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-left: 10px;width: 42px;"><i class="fa fa-user-o"></i></a>
-                                <div class="tag">
-                                    <p>En ligne</p>
-                                </div><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;margin-left: 10px;"><i class="fa fa-trash-o"></i></a></div>
+                        </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card-no-image offline">
-                            <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Tommy</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-send-o"></i></a>
-                            <div
-                                class="tag">
-                                <p>En ligne il y a 5min</p>
-                        </div><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-left: 10px;width: 42px;"><i class="fa fa-user-o"></i></a><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;margin-left: 10px;"><i class="fa fa-trash-o"></i></a></div>
+                            <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Greg</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-plus"></i></a>
+                            <a
+                                class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-left: 10px;width: 42px;"><i class="fa fa-user-o"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card-no-image offline">
+                            <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Vincent</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-plus"></i></a>
+                            <a
+                                class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-left: 10px;width: 42px;"><i class="fa fa-user-o"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card-no-image offline">
+                            <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Louise</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-plus"></i></a>
+                            <a
+                                class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-left: 10px;width: 42px;"><i class="fa fa-user-o"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card-no-image offline">
+                            <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Marie</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-plus"></i></a>
+                            <a
+                                class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-left: 10px;width: 42px;"><i class="fa fa-user-o"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image offline">
-                        <h3 class="d-flex align-items-center"><img class="rounded-circle" src="https://www.gravatar.com/avatar?s=128" width="32" height="32" loading="lazy">&nbsp;Marianne</h3><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;"><i class="fa fa-send-o"></i></a>
-                        <div
-                            class="tag">
-                            <p>En ligne il y a 3h</p>
-                    </div><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="margin-left: 10px;width: 42px;"><i class="fa fa-user-o"></i></a><a class="btn btn-outline-primary btn-sm" role="button" href="#" style="width: 42px;margin-left: 10px;"><i class="fa fa-trash-o"></i></a></div>
-            </div>
-            </div>
             </div>
         </section>
     </main>

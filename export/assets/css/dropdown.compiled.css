@@ -1,28 +1,28 @@
 .dropdown-menu.show .item-1 {
-    animation: rotateX 300ms 60ms ease-in-out forwards;
-    transform-origin: top center;
+  animation: rotateX 300ms 60ms ease-in-out forwards;
+  transform-origin: top center;
 }
 
 .dropdown-menu.show .item-2 {
-    animation: rotateX 300ms 120ms ease-in-out forwards;
-    transform-origin: top center;
+  animation: rotateX 300ms 120ms ease-in-out forwards;
+  transform-origin: top center;
 }
 
 .dropdown-menu.show .item-3 {
-    animation: rotateX 300ms 180ms ease-in-out forwards;
-    transform-origin: top center;
+  animation: rotateX 300ms 180ms ease-in-out forwards;
+  transform-origin: top center;
 }
 
 @keyframes rotateX {
-    0% {
-        opacity: 0;
-        transform: rotateX(-90deg);
-    }
-    50% {
-        transform: rotateX(-20deg);
-    }
-    100% {
-        opacity: 1;
-        transform: rotateX(0deg);
-    }
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
 }
