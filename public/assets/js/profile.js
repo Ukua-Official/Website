@@ -1,43 +1,43 @@
 class UkuaProfile {
 
-    _pageEvent
-    _pageEventText
-    _formEvent
-    _formTextEvent
-    _sectionPage
-    _photoUrl
-    _username
-    _birthday
-    _email
-    _isLaunchTimeout = false;
-    _currentTimeout;
+    _pE
+    _pTE
+    _fE
+    _fTE
+    _sP
+    _pUrl
+    _u
+    _b
+    _e
+    _isLT
+    _cT
 
     constructor() {
-        this._pageEvent = $('.page-event')
-        this._pageEventText = $('.page-event #pageTextEvent')
-        this._formEvent = $('.form-event')
-        this._formTextEvent = $('.form-event #formTextEvent')
-        this._sectionPage = $('section.page-section')
-        this._photoUrl = $('#photoUrl')
-        this._username = $('#username')
-        this._birthday = $('#birthday')
-        this._email = $('#email')
+        this._pE = $('.page-event')
+        this._pTE = $('.page-event #pageTextEvent')
+        this._fE = $('.form-event')
+        this._fTE = $('.form-event #formTextEvent')
+        this._sP = $('section.page-section')
+        this._pUrl = $('#photoUrl')
+        this._u = $('#username')
+        this._b = $('#birthday')
+        this._e = $('#email')
 
-        firebase.auth().Gc(user => {
-            if (!user)
+        firebase.auth().Gc(u => {
+            if (!u)
                 window.location.replace('/Website/public/index.html')
             else {
-                this._sectionPage.attr('user-uid', firebase.auth().currentUser.uid)
-                firebase.database().ref('users/' + user.uid + '/').once('value')
-                    .then(dataSnapshot => {
-                        this._photoUrl.attr('placeholder', dataSnapshot.val().photoUrl ? dataSnapshot.val().photoUrl : 'N/A')
-                        this._username.attr('placeholder', dataSnapshot.val().username)
-                        this._birthday.attr('placeholder', dataSnapshot.val().birthday ? dataSnapshot.val().birthday : 'N/A')
-                        this._email.attr('placeholder', user.email)
+                this._sP.attr('user-uid', firebase.auth().currentUser.uid)
+                firebase.database().ref('users/' + u.uid + '/').once('value')
+                    .then(d => {
+                        this._pUrl.attr('placeholder', d.val().photoUrl ? d.val().photoUrl : 'N/A')
+                        this._u.attr('placeholder', d.val().username)
+                        this._b.attr('placeholder', d.val().birthday ? d.val().birthday : 'N/A')
+                        this._e.attr('placeholder', u.email)
                     })
-                    .catch(error => {
-                        this._pageEvent.addClass('show')
-                        this._pageEventText.val('Impossible de charger le profil. (' + error.code + ')')
+                    .catch(e => {
+                        this._pE.addClass('show')
+                        this._pTE.val('Impossible de charger le profil. (' + e.code + ')')
                     })
                     .finally(() => {
                         $('main.page').addClass('show')
@@ -46,91 +46,58 @@ class UkuaProfile {
         })
 
         $('#btnPhotoUrl').click(() => {
-            this._formEvent.removeClass('event-success event-error')
-            this._formEvent.addClass('show')
-            this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Chargement...')
-            if (this._photoUrl.val() && this._photoUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\\+.~#?&/=]*)/gi))) {
-                firebase.database().ref('users/' + this._sectionPage.attr('user-uid')).update({
-                    'photoUrl': this._photoUrl.val()
-                })
-                    .then(() => {
-                        this._formEvent.addClass('event-success')
-                        this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification avec succès, application des changements dans quelques instants...')
-                    })
-                    .catch(error => {
-                        this._formEvent.addClass('event-error')
-                        this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification échouée. (' + error.code + ')')
-                    })
-            } else {
-                this._formEvent.addClass('event-error')
-                this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification échouée. (Input-Not-Url)')
-            }
-            this._launchTimeout()
+            this._pUrl.attr("disabled", "")
+            this._fE.removeClass('event-success event-error')
+            this._fE.addClass('show')
+            this._pfEM(null, null, this._fTE, 'Chargement...')
+            this._pUrl.val() && this._pUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\\+.~#?&/=]*)/gi)) ?
+                firebase.database().ref("users/" + this._sP.attr("user-uid"))
+                    .update({photoUrl: this._pUrl.val()})
+                    .then(() => this._ic(this._pUrl) && this._pfEM(this._pUrl, "event-success", this._fTE, "Modification avec succès, application des changements dans quelques instants..."))
+                    .catch(a => this._pfEM(this._pUrl, "event-error", this._fTE, "Modification échouée. (" + a.code + ")")) :
+                this._pfEM(this._pUrl, "event-error", this._fTE, "Modification échouée. (not-url-input)")
+            this._lt()
         })
 
         $('#btnUsername').click(() => {
-            this._username.attr("disabled", "")
-            this._formEvent.removeClass('event-success event-error')
-            this._formEvent.addClass('show')
-            this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Chargement...')
-            if (this._username.val() && this._username.val().match(new RegExp(/([a-zA-Z_.0-9]).{3,16}/gi))) {
-                firebase.database().ref("users").once('value')
-                    .then(dataSnapshot => {
-                        if (!dataSnapshot.forEach(element => {
-                            if (this._username.val() === element.val().username)
-                                return true
-                        }))
-                            firebase.database().ref('users/' + this._sectionPage.attr('user-uid')).update({
-                                'username': this._username.val()
-                            })
-                                .then(() => {
-                                    this._formEvent.addClass('event-success')
-                                    this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification avec succès, application des changements dans quelques instants...')
-                                    this._inputClean(this._username)
-                                    this._username.attr("disabled", null)
-                                    throw new Error("test")
-                                })
-                                .catch(error => {
-                                    this._formEvent.addClass('event-error')
-                                    this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification échouée. (' + error.code + ')')
-                                    this._username.attr("disabled", null)
-                                })
-                        else {
-                            this._formEvent.addClass('event-error')
-                            this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification échouée. (Already-Username-Exist)')
-                            this._username.attr("disabled", null)
-                        }
-                    })
-                    .catch(error => {
-                        this._formEvent.addClass('event-error')
-                        this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification échouée. (' + error.code + ')')
-                        this._username.attr("disabled", null)
-                    })
-            } else {
-                this._formEvent.addClass('event-error')
-                this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;Modification échouée. (Input-Malformated)')
-                this._username.attr("disabled", null)
-            }
-            this._launchTimeout()
+            this._u.attr("disabled", "")
+            this._fE.removeClass('event-success event-error')
+            this._fE.addClass('show')
+            this._pfEM(null, null, this._fTE, 'Chargement...')
+            this._u.val() && this._u.val().match(new RegExp(/([a-zA-Z_.0-9]).{3,16}/gi)) ?
+                firebase.database().ref("users").once("value").then(a => {
+                    a.forEach(a => {
+                        if (this._u.val() === a.val().username) return true
+                    }) ?
+                        this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (already-username-exist)") :
+                        firebase.database().ref("users/" + this._sP.attr("user-uid"))
+                            .update({username: this._u.val()})
+                            .then(() => this._ic(this._u) && this._pfEM(this._u, "event-success", this._fTE, "Modification avec succès, application des changements dans quelques instants..."))
+                            .catch(b => this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (" + b.code + ")"))
+                }).catch(a => this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (" + a.code + ")")) :
+                this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (str-bad-format)")
+            this._lt()
         })
-
     }
 
-    _formEventMessaging(__input, __class, __str) {
-        this._formEvent.addClass(__class)
-        this._formTextEvent.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;' + __str)
-        __input.attr("disabled", null)
+    _pfEM(i, c, pf, s) {
+        c && this._fE.addClass(c)
+        pf.html('<span class="spinner-grow spinner-grow-sm" role="status"></span>&nbsp;' + s)
+        i && i.attr("disabled", null)
+        return true;
     }
 
-    _inputClean(__input) {
-        __input.attr('placeholder', __input.val())
-        __input.val("")
+    _ic(i) {
+        i.attr('placeholder', i.val())
+        i.val("")
+        return true;
     }
 
-    _launchTimeout() {
-        if (this._isLaunchTimeout) clearTimeout(this._currentTimeout)
-        this._isLaunchTimeout = true
-        this._currentTimeout = setTimeout(() => this._formEvent.removeClass('show'), 3000)
+    _lt() {
+        this._isLT && clearTimeout(this._cT)
+        this._isLT = true
+        this._cT = setTimeout(() => this._fE.removeClass("show"), 3e3)
+        return true;
     }
 }
 

@@ -425,7 +425,7 @@ TODO: Main
 .page-section.block {
     max-width: 1200px;
     padding: 20px;
-    margin: auto auto 30px;
+    margin: 30px auto 30px;
     box-shadow: 0 2px 10px var(--form-shadow)
 }
 
