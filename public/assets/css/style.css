@@ -371,6 +371,24 @@ TODO: Main
     opacity: 0;
 }
 
+.page-event {
+    text-align: center;
+    background: #ff3e3e;
+    color: white;
+    position: absolute;
+    transform: scaleY(0);
+    transition: transform 100ms ease-in-out, color 300ms ease-in-out
+}
+
+.page-event h3 {
+    font-size: 16px;
+}
+
+.page-event.show {
+    position: relative;
+    transform: scaleY(1);
+}
+
 .page.show {
     opacity: 1;
     transition: opacity 1000ms ease-in-out;

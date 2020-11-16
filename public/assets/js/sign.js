@@ -44,7 +44,7 @@ $('form#signUp').submit(function (event) {
                     if (username === element.val().username)
                         return true
                 }))
-                    firebase.auth().createUserWithEmailAndPassword(email, password)
+                    firebase.auth().dc(email, password)
                         .then(function () {
                             firebase.database().ref("users/" + firebase.auth().currentUser.uid).set({
                                 "uid": firebase.auth().currentUser.uid,

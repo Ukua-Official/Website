@@ -12,7 +12,7 @@ new UkuaPage(
                         <h1 class='text-center'>Connexion</h1>
                         <div class='form-group'>
                             <label>
-                                <i class='fa fa-envelope-o'></i>&nbsp;Adresse mail<span class='text-danger'>*</span>
+                                <i class='fa fa-envelope'></i>&nbsp;Adresse mail<span class='text-danger'>*</span>
                             </label>
                             <input autocomplete='off' class='form-control' inputmode='email' name='email' required
                                    type='email'>
@@ -76,7 +76,7 @@ new UkuaPage(
                         <h1 class='text-center'>Inscription</h1>
                         <div class='form-group'>
                             <label>
-                                <i class='fa fa-envelope-o'></i>&nbsp;Adresse mail<span class='text-danger'>*</span>
+                                <i class='fa fa-envelope'></i>&nbsp;Adresse mail<span class='text-danger'>*</span>
                             </label>
                             <input autocomplete='off' class='form-control' inputmode='email' name='email' required
                                    type='email'>
@@ -190,7 +190,7 @@ new UkuaPage(
     </section>
 </main>",
     /** @lang JavaScript */ "$(document).ready(() => {
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().Gc(function (user) {
         if (user) window.location.replace('/profile')
     })
 })
@@ -206,9 +206,9 @@ $('form#signIn').submit(function (event) {
     let email = values[0]['value']
     let password = values[1]['value']
     let remember_me = values.length === 3
-    firebase.auth().setPersistence(remember_me ? firebase.auth.Auth.Persistence.qd : firebase.auth.Auth.Persistence.sd)
+    firebase.auth().wb(remember_me ? firebase.auth.Auth.Persistence.qd : firebase.auth.Auth.Persistence.sd)
         .then(() => {
-            firebase.auth().signInWithEmailAndPassword(email, password)
+            firebase.auth().Tc(email, password)
                 .then(function () {
                     loadingEvent.addClass('event-success')
                     loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Connexion avec succès, redirection dans quelques instants...')
@@ -243,9 +243,9 @@ $('form#signUp').submit(function (event) {
                     if (username === element.val().username)
                         return true
                 }))
-                    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.sd)
+                    firebase.auth().wb(firebase.auth.Auth.Persistence.sd)
                         .then(() => {
-                            firebase.auth().createUserWithEmailAndPassword(email, password)
+                            firebase.auth().dc(email, password)
                                 .then(function () {
                                     firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
                                         'uid': firebase.auth().currentUser.uid,

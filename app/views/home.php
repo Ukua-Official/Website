@@ -13,7 +13,7 @@ new UkuaPage(
 </main>",
     /** @lang JavaScript */ "$(document).ready(() => {
     firebase.auth().onAuthStateChanged(function (user) {
-        window.location.replace(user ? '/profile' : '/auth/sign')
+        window.location.replace(user ? '/profile' : '/auth')
     })
 })"
 );
