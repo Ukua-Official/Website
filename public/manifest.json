@@ -1,10 +1,6 @@
-<?php
-
-echo /* @lang JSON */
-    '{
+{
   "short_name": "Ukua",
   "name": "Ukua",
-  "description" : "' . UkuaMessages::getMessage('Ukua-is', Ukua::getLang()) . '",
   "icons": [
     {
       "src": "/public/assets/img/logo_light_16x16.png",
@@ -59,4 +55,4 @@ echo /* @lang JSON */
   ],
   "start_url": "/",
   "display": "fullscreen"
-}';
+}

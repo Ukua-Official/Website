@@ -22,7 +22,7 @@
           type="image/png">
     <link href="/public/assets/img/logo_<?php echo UkuaPage::getTheme(); ?>_512x512.png" rel="icon" sizes="512x512"
           type="image/png">
-    <link href="/public/assets/manifest.php" rel="manifest">
+    <link href="/public/manifest.json" rel="manifest">
     <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
