@@ -59,6 +59,19 @@ class UkuaProfile {
             this._lt()
         })
 
+        $('#btnEMail').click(() => {
+            this._e.attr("disabled", "")
+            this._fE.removeClass('event-success event-error')
+            this._fE.addClass('show')
+            this._pfEM(null, null, this._fTE, 'Chargement...')
+            this._e.val() && this._e.val().match(new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi)) ?
+                firebase.auth().currentUser.Ab(this._e.val())
+                    .then(() => this._ic(this._e) && this._pfEM(this._e, "event-success", this._fTE, "Modification avec succès, application des changements dans quelques instants..."))
+                    .catch(b => this._pfEM(this._e, "event-error", this._fTE, "Modification échouée. (" + b.code + ")")) :
+                this._pfEM(this._e, "event-error", this._fTE, "Modification échouée. (not-email-input)")
+            this._lt()
+        })
+
         $('#btnUsername').click(() => {
             this._u.attr("disabled", "")
             this._fE.removeClass('event-success event-error')
@@ -78,6 +91,7 @@ class UkuaProfile {
                 this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (str-bad-format)")
             this._lt()
         })
+
     }
 
     _pfEM(i, c, pf, s) {
