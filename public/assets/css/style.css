@@ -305,6 +305,10 @@ TODO: Navigation
 /*
 TODO: Navigation Dropdown
  */
+.dropdown a {
+    cursor: pointer;
+}
+
 .navigation-bar .dropdown-menu a {
     color: var(--navigation-inactive);
     transition: color 300ms ease-in-out;

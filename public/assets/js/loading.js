@@ -31,6 +31,7 @@ class UkuaLoading {
                         this._pE.addClass('show')
                         this._pTE.append('<h3 class="p-1">Impossible de charger la page. (' + e.toString() + ')</h3>')
                     })
+                //check notification or make notification system
             } else {
                 $('#navLoading').remove()
                 this._nL.append("<li class='navigation-item'><a class='navigation-link' href='/auth'><i class='fa fa-sign-in'></i>&nbsp;Se connecter</a></li>")

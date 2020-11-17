@@ -57,7 +57,7 @@ class UkuaAuth {
                                                         .set({username: _u})
                                                         .then(() =>
                                                             firebase.database().ref(`private/${firebase.auth().currentUser.uid}`)
-                                                                .set({settings: {public_birthday: false, public_bio: false}})
+                                                                .set({settings: {public_birthday: false, public_bio: false, public_online: false}})
                                                                 .then(() => this._cefs('event-success', this._sUfE, this._sUfTE, 'Inscription avec succès, redirection dans quelques instants...'))
                                                                 .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
                                                         .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
@@ -87,3 +87,15 @@ class UkuaAuth {
 }
 
 $(document).ready(() => new UkuaAuth())
+
+/*
+
+ firebase.database().ref(`public`).once('value').then(a => {
+
+a.forEach((k) => {console.log(k.key, k.val())})
+
+ })
+
+
+ firebase.database().ref('public/lCxsZYAfDXd1MrrMCRegg7AOBoJ2/last_online').once('value').then(a => console.log(new Date(a.val())))
+ */
