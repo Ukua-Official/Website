@@ -25,19 +25,20 @@ class UkuaProfile {
 
         firebase.auth().Gc(u => {
             if (!u)
-                window.location.replace('/Website/public/index.html')
+                window.location.replace('/auth')
             else {
-                this._sP.attr('user-uid', firebase.auth().currentUser.uid)
-                firebase.database().ref('users/' + u.uid + '/').once('value')
+                this._sP.attr('user-uid', u.uid)
+                firebase.database().ref(`public/${u.uid}`).once('value')
                     .then(d => {
                         this._pUrl.attr('placeholder', d.val().photoUrl ? d.val().photoUrl : 'N/A')
                         this._u.attr('placeholder', d.val().username)
-                        this._b.attr('placeholder', d.val().birthday ? d.val().birthday : 'N/A')
+                        this._b.attr('placeholder', d.val().birthday ? d.val().birthday : 'dd/MM/AAAA')
                         this._e.attr('placeholder', u.email)
                     })
                     .catch(e => {
+                        console.error(e)
                         this._pE.addClass('show')
-                        this._pTE.val('Impossible de charger le profil. (' + e.code + ')')
+                        this._pTE.val('Impossible de charger le profil. (' + e + ')')
                     })
                     .finally(() => {
                         $('main.page').addClass('show')
@@ -50,7 +51,7 @@ class UkuaProfile {
             this._fE.removeClass('event-success event-error')
             this._fE.addClass('show')
             this._pfEM(null, null, this._fTE, 'Chargement...')
-            this._pUrl.val() && this._pUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\\+.~#?&/=]*)/gi)) ?
+            this._pUrl.val() && this._pUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\\+.~#?&/=]*)/)) ?
                 firebase.database().ref("users/" + this._sP.attr("user-uid"))
                     .update({photoUrl: this._pUrl.val()})
                     .then(() => this._ic(this._pUrl) && this._pfEM(this._pUrl, "event-success", this._fTE, "Modification avec succès, application des changements dans quelques instants..."))
@@ -64,7 +65,7 @@ class UkuaProfile {
             this._fE.removeClass('event-success event-error')
             this._fE.addClass('show')
             this._pfEM(null, null, this._fTE, 'Chargement...')
-            this._e.val() && this._e.val().match(new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi)) ?
+            this._e.val() && this._e.val().match(new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) ?
                 firebase.auth().currentUser.Ab(this._e.val())
                     .then(() => this._ic(this._e) && this._pfEM(this._e, "event-success", this._fTE, "Modification avec succès, application des changements dans quelques instants..."))
                     .catch(b => this._pfEM(this._e, "event-error", this._fTE, "Modification échouée. (" + b.code + ")")) :
@@ -89,6 +90,22 @@ class UkuaProfile {
                             .catch(b => this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (" + b.code + ")"))
                 }).catch(a => this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (" + a.code + ")")) :
                 this._pfEM(this._u, "event-error", this._fTE, "Modification échouée. (str-bad-format)")
+            this._lt()
+        })
+
+        $('#btnBirthday').click(() => {
+            this._b.attr("disabled", "")
+            this._fE.removeClass('event-success event-error')
+            this._fE.addClass('show')
+            this._pfEM(null, null, this._fTE, 'Chargement...')
+            let _m;
+            this._b.val() && (_m = this._b.val().match(new RegExp(/(0?[1-9]|[1-2][0-9]|3[0-1])[\/](0?[1-9]|1[0-2])[\/](\d{4})/gi))) ?
+                console.log(_m, _m[1], _m[2], _m[3])
+                /*firebase.database().ref("users/" + this._sP.attr("user-uid"))
+                    .update({birthday: this._b.val()})
+                    .then(() => this._ic(this._b) && this._pfEM(this._b, "event-success", this._fTE, "Modification avec succès, application des changements dans quelques instants..."))
+                    .catch(b => this._pfEM(this._b, "event-error", this._fTE, "Modification échouée. (" + b.code + ")"))*/ :
+                this._pfEM(this._b, "event-error", this._fTE, "Modification échouée. (str-bad-format)")
             this._lt()
         })
 

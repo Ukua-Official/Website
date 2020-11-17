@@ -4,8 +4,6 @@ $(document).ready(() => {
 
         $('#navLoading').remove()
 
-        console.log(firebase.auth().currentUser)
-        console.log(user)
         if (user) {
 
             firebase.database().ref('users/' + user.uid + '/').once('value')
