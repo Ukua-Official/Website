@@ -1,12 +1,12 @@
 <?php
 new UkuaPage(
-    "Ukua | Logout",
+    "Ukua | " .  UkuaMessages::getMessage('Logout', Ukua::getLang()),
     UkuaMessages::getMessage('Logout-desc', Ukua::getLang()),
     /** @lang HTML */ "",
     /** @lang JavaScript */ "$(document).ready(() => {
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().Gc(function (user) {
         if (user)
-            firebase.auth().signOut().then(function () {
+            firebase.auth().zb().then(function () {
                 // Sign-out successful.
             }).catch(function (error) {
                 // An error happened.

@@ -169,7 +169,7 @@
                     "</div>" +
                     "<div class='gradient item-3'>" +
                     "<a class='dropdown-item' href='/auth/logout'>" +
-                    "<i class='fa fa-sign-out'></i>&nbsp;<?php echo UkuaMessages::getMessage('Logout', Ukua::getLang()); ?>" +
+                    "<i class='fa fa-sign-out'></i>&nbsp;<?php echo UkuaMessages::getMessage('ToLogOut', Ukua::getLang()); ?>" +
                     "</a>" +
                     "</div>" +
                     "</div>" +
@@ -178,7 +178,7 @@
                 $('#navList').append(
                     "<li class='navigation-item'>" +
                     "<a class='navigation-link' href='/auth'>" +
-                    "<i class='fa fa-sign-in'></i>&nbsp;<?php echo UkuaMessages::getMessage('Sign', Ukua::getLang()); ?>" +
+                    "<i class='fa fa-sign-in'></i>&nbsp;<?php echo UkuaMessages::getMessage('ToLogIn', Ukua::getLang()); ?>" +
                     "</a>" +
                     "</li>")
             }

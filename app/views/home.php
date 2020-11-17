@@ -12,7 +12,7 @@ new UkuaPage(
     </section>
 </main>",
     /** @lang JavaScript */ "$(document).ready(() => {
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().Gc(function (user) {
         window.location.replace(user ? '/profile' : '/auth')
     })
 })"

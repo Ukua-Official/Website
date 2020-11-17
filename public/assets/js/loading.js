@@ -1,3 +1,42 @@
+class UkuaLoading {
+
+    _pE
+    _pTE
+    _nL
+    _b
+
+    constructor() {
+        firebase.auth().Gc(u => {
+            if (this._b) window.location.replace('/auth')
+            this._b = true
+            this._pE = $('.page-event')
+            this._pTE = $('.page-event #pageTextEvent')
+            this._nL = $('#navList')
+            $('#navLoading').remove()
+            if (u) {
+                firebase.database().ref(`public/${u.uid}`).once('value')
+                    .then(() => {
+
+                    })
+                    .catch(e => {
+                        this._pE.addClass('show')
+                        this._pTE.append('<h3 class="p-1">Impossible de charger la page. (' + e.toString() + ')</h3>')
+                    })
+            } else this._nL.append("<li class='navigation-item'><a class='navigation-link' href='/auth'><i class='fa fa-sign-in'></i>&nbsp;Se connecter</a></li>")
+            $('main.page').addClass('show')
+        })
+
+        try {
+            firebase.database().ref().child(".info/connected").on("value", a => $("#status").css("color", true === a.val() ? "#3dcf00" : "#c80000"))
+        } catch (a) {
+            $("#status").css("color", "#c80000")
+        }
+    }
+
+}
+
+$(document).ready(() => new UkuaLoading())
+
 $(document).ready(() => {
 
     firebase.auth().Gc(function (user) {
@@ -64,14 +103,4 @@ $(document).ready(() => {
 
         }
     })
-
-    try {
-        firebase.database().ref().child('.info/connected').on('value', connectedSnap => $("#status").css('color', connectedSnap.val() === true ? '#3dcf00' : '#c80000'));
-        firebase.database().ref().child('.info/connected').on('value', connectedSnap => {
-            $("#authStatus").css('color', connectedSnap.val() === true ? '#3dcf00' : '#c80000');
-            $("#dbStatus").css('color', connectedSnap.val() === true ? '#3dcf00' : '#c80000');
-        });
-    } catch (e) {
-        $("#status").css('color', '#c80000')
-    }
 })
