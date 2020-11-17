@@ -1,6 +1,5 @@
 class UkuaAuthPresence {
 
-    _isLI
     _cI
 
     constructor() {
@@ -9,8 +8,9 @@ class UkuaAuthPresence {
     }
 
     _li(_b, u) {
-        this._isLI && clearInterval(this._cI)
-        _b && (this._isLI = true) && (this._cI = setInterval(() => firebase.database().ref(`public/${u.uid}`).update({"last_online": new Date()}), 60000))
+        !_b && this._cI && clearInterval(this._cI)
+        !_b && firebase.database().ref(`public/${u.uid}`).update({"last_online": null})
+        _b && (this._cI = setInterval(() => firebase.database().ref(`public/${u.uid}`).update({"last_online": new Date()}), 60000))
     }
 
 }

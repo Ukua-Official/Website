@@ -60,6 +60,10 @@
     </div>
 </nav>
 
+<div class="page-event container m-0 min-vw-100">
+    <div class="p-1" id="pageTextEvent"></div>
+</div>
+
 <?php echo UkuaPage::getMain(); ?>
 
 <footer class="footer">
@@ -131,6 +135,7 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="/public/assets/js/main.min.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
@@ -201,7 +206,6 @@
         <?php echo UkuaPage::getScript(); ?>
     </script>
 <?php } ?>
-<script src="/public/assets/js/main.min.js"></script>
 
 </body>
 
