@@ -275,7 +275,7 @@ TODO: Navigation
 }
 
 .navigation-list .navigation-item {
-    padding-right: 2rem
+    padding-right: 16px
 }
 
 .navigation-item .badge {
@@ -472,6 +472,9 @@ TODO: Main
 
 }
 
+/*
+TODO: Status
+ */
 .status-table .status-item {
     border-left: var(--default-text-color) solid 2px;
     border-right: var(--default-text-color) solid 2px;
@@ -536,6 +539,11 @@ TODO: Form
     transition: color 300ms ease-in-out;
 }
 
+.form-event.event-warning {
+    color: #bf712d;
+    transition: color 300ms ease-in-out;
+}
+
 .form-event.event-error {
     color: #dc3545;
     transition: color 300ms ease-in-out;
@@ -548,6 +556,24 @@ TODO: Form
 
 .form-check label {
     margin-top: 2px;
+}
+
+/*
+TODO: Notification
+ */
+
+.notification {
+    position: absolute;
+    opacity: 0;
+    transform: scaleX(0) scaleY(0);
+    transition: transform 100ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.notification.notified {
+    position: relative;
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+    transition: opacity 300ms ease-in-out;
 }
 
 /*

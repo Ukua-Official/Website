@@ -55,7 +55,11 @@ class UkuaAuth {
                                                 .then(() =>
                                                     firebase.database().ref(`public/${firebase.auth().currentUser.uid}`)
                                                         .set({username: _u})
-                                                        .then(() => this._cefs('event-success', this._sUfE, this._sUfTE, 'Inscription avec succès, redirection dans quelques instants...'))
+                                                        .then(() =>
+                                                            firebase.database().ref(`private/${firebase.auth().currentUser.uid}`)
+                                                                .set({settings: {public_birthday: false, public_bio: false}})
+                                                                .then(() => this._cefs('event-success', this._sUfE, this._sUfTE, 'Inscription avec succès, redirection dans quelques instants...'))
+                                                                .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
                                                         .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
                                                 .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')))
                                         .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')))
