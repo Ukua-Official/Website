@@ -38,6 +38,7 @@ class UkuaAuthProfile {
                         this._fdPublicRef.once('value')
                             .then(d => this._pUrl.attr('placeholder', d.val().photoUrl ? unescape(d.val().photoUrl) : 'N/A') && this._u.attr('placeholder', unescape(d.val().username)))
                             .catch(e => this._pE.addClass('show') && this._pTE.append('<h3 class="p-1">Impossible de charger la partie publique du profil. (' + e.toString() + ')</h3>')))
+                //check number friends-chats
 
                 $('#btnPhotoUrl').click(() => {
                     this._pUrl.attr('disabled', '')

@@ -1,6 +1,6 @@
 <?php
 new UkuaPage(
-    "Ukua | " .  UkuaMessages::getMessage('Logout', Ukua::getLang()),
+    "Ukua | " . UkuaMessages::getMessage('Logout', Ukua::getLang()),
     UkuaMessages::getMessage('Logout-desc', Ukua::getLang()),
     /** @lang HTML */ "",
     /** @lang JavaScript */ "$(document).ready(() => {

@@ -1,32 +1,32 @@
 .bootstrap_chat {
-  background-color: #74EBD5;
-  min-height: 100vh;
+    background-color: #74EBD5;
+    min-height: 100vh;
 }
 
 .text-small {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 .chat-box {
-  height: 300px;
-  overflow-y: scroll;
+    height: 300px;
+    overflow-y: scroll;
 }
 
 .rounded-lg {
-  border-radius: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .status-table .item:first-child {
-  border-top: #000 solid 2px;
+    border-top: #000 solid 2px;
 }
 
 .status-table .item:last-child {
-  border-bottom: #000 solid 2px;
+    border-bottom: #000 solid 2px;
 }
 
 .status-table .item {
-  border-left: #000 solid 2px;
-  border-right: #000 solid 2px;
-  border-top: grey solid 1px;
+    border-left: #000 solid 2px;
+    border-right: #000 solid 2px;
+    border-top: grey solid 1px;
 }
 
