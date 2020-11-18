@@ -16,8 +16,7 @@ class UkuaAuthProfile {
 
     constructor() {
         firebase.auth().Gc(u => {
-            if (!u)
-                window.location.replace('/auth')
+            if (!u) window.location.replace('/auth')
             else {
                 this._pE = $('.page-event')
                 this._pTE = $('.page-event #pageTextEvent')
@@ -29,25 +28,27 @@ class UkuaAuthProfile {
                 this._bi = $('#bio')
                 this._e = $('#email')
                 this._e.attr('placeholder', u.email)
-                this._fdPrivateRef = firebase.database().ref(`private/${u.uid}`)
-                this._fdPublicRef = firebase.database().ref(`public/${u.uid}`)
-                this._fdPrivateRef.once('value')
-                    .then(d => this._bd.attr('placeholder', d.val().birthday ? unescape(d.val().birthday) : 'dd/MM/AAAA') && this._bi.attr('placeholder', d.val().bio ? unescape(d.val().bio) : 'N/A'))
-                    .catch(e => this._pE.addClass('show') && this._pTE.append('<h3 class="p-1">Impossible de charger la partie privée du profil. (' + e.toString() + ')</h3>'))
+                this._fdPrivateRef = firebase.database().ref(`ukua/${u.uid}`)
+                this._fdPublicRef = firebase.database().ref(`users/${u.uid}`)
+                this._fdPublicRef.once('value')
+                    .then(d => this._pUrl.attr('placeholder', d.val().photoUrl ? unescape(d.val().photoUrl) : 'N/A') && this._u.attr('placeholder', unescape(d.val().username)))
+                    .catch(e => this._pE.addClass('show') && this._pTE.append('<h3 class=\'p-1\'>Impossible de charger la partie publique du profil. (' + e.toString() + ')</h3>'))
                     .finally(() =>
-                        this._fdPublicRef.once('value')
-                            .then(d => this._pUrl.attr('placeholder', d.val().photoUrl ? unescape(d.val().photoUrl) : 'N/A') && this._u.attr('placeholder', unescape(d.val().username)))
-                            .catch(e => this._pE.addClass('show') && this._pTE.append('<h3 class="p-1">Impossible de charger la partie publique du profil. (' + e.toString() + ')</h3>')))
-                //check number friends-chats
+                        this._fdPrivateRef.child('birthday').once('value')
+                            .then(d => this._bd.attr('placeholder', d.val() ? unescape(d.val()) : 'dd/MM/AAAA'))
+                            .catch(e => e.code === 'PERMISSION_DENIED' ? this._bd.attr('placeholder', 'dd/MM/AAAA') : this._pE.addClass('show') && this._pTE.append('<h3 class=\'p-1\'>Impossible de charger la partie privée du profil. (' + e.toString() + ')</h3>'))
+                        && this._fdPrivateRef.child('bio').once('value')
+                            .then(d => this._bi.attr('placeholder', d.val() ? unescape(d.val()) : 'N/A'))
+                            .catch(e => e.code === 'PERMISSION_DENIED' ? this._bi.attr('placeholder', 'N/A') : this._pE.addClass('show') && this._pTE.append('<h3 class=\'p-1\'>Impossible de charger la partie privée du profil. (' + e.toString() + ')</h3>')))
 
                 $('#btnPhotoUrl').click(() => {
                     this._pUrl.attr('disabled', '')
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
                     this._icpfs(null, null, this._fTE, 'Chargement...')
-                    this._pUrl.val() && this._pUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\\+.~#?&/=]*)/)) ?
-                        this._fdPublicRef
-                            .update({photoUrl: unescape(this._pUrl.val())})
+                    this._pUrl.val() && (this._pUrl.val().toLowerCase() === 'n/a' || this._pUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\\+.~#?&/=]*)/))) ?
+                        this._fdPublicRef.child('photoUrl')
+                            .set(this._pUrl.val().toLowerCase() === 'n/a' ? null : unescape(this._pUrl.val()))
                             .then(() => this._ic(this._pUrl) && this._icpfs(this._pUrl, 'event-success', this._fTE, 'Modification avec succès, application des changements dans quelques instants...'))
                             .catch(e => this._icpfs(this._pUrl, 'event-error', this._fTE, 'Modification échouée. (' + e.code + ')')) :
                         this._icpfs(this._pUrl, 'event-error', this._fTE, 'Modification échouée. (input-malformated)')
@@ -72,18 +73,13 @@ class UkuaAuthProfile {
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
                     this._icpfs(null, null, this._fTE, 'Chargement...')
-                    this._u.val() && this._u.val().match(new RegExp(/([a-zA-Z_.0-9]).{3,16}/gi)) ?
-                        firebase.database().ref('public').once('value')
-                            .then(a => {
-                                a.forEach(b => {
-                                    if (this._u.val() === b.val().username) return true
-                                }) ?
-                                    this._icpfs(this._u, 'event-error', this._fTE, 'Modification échouée. (auth/username-already-in-use)') :
-                                    this._fdPublicRef
-                                        .update({username: unescape(this._u.val())})
-                                        .then(() => this._ic(this._u) && this._icpfs(this._u, 'event-success', this._fTE, 'Modification avec succès, application des changements dans quelques instants...'))
-                                        .catch(b => this._icpfs(this._u, 'event-error', this._fTE, 'Modification échouée. (' + b.code + ')'))
-                            })
+                    this._u.val() && this._u.val().match(new RegExp(/([a-zA-Z_.0-9]).{2,16}/gi)) ?
+                        firebase.database().ref('users').orderByChild('username').equalTo(this._u.val()).once('value')
+                            .then(a => a.exists() ? this._icpfs(this._u, 'event-error', this._fTE, 'Modification échouée. (auth/username-already-in-use)') :
+                                this._fdPublicRef.child('username')
+                                    .set(unescape(this._u.val()))
+                                    .then(() => this._ic(this._u) && this._icpfs(this._u, 'event-success', this._fTE, 'Modification avec succès, application des changements dans quelques instants...'))
+                                    .catch(b => this._icpfs(this._u, 'event-error', this._fTE, 'Modification échouée. (' + b.code + ')')))
                             .catch(a => this._icpfs(this._u, 'event-error', this._fTE, 'Modification échouée. (' + a.code + ')')) :
                         this._icpfs(this._u, 'event-error', this._fTE, 'Modification échouée. (input-malformated)')
                     this._lt()
@@ -94,18 +90,13 @@ class UkuaAuthProfile {
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
                     this._icpfs(null, null, this._fTE, 'Chargement...')
-                    let _m, _vBd = this._bd.val();
-                    _vBd && (_m = _vBd.match(new RegExp(/(0?[1-9]|[1-2][0-9]|3[0-1])[\/](0?[1-9]|1[0-2])[\/](\d{4})/gi))) ?
+                    let _m
+                    this._bd.val() && (this._bd.val().toLowerCase() === 'n/a' || (_m = this._bd.val().match(new RegExp(/(0?[1-9]|[1-2][0-9]|3[0-1])[\/](0?[1-9]|1[0-2])[\/](\d{4})/gi)))) ?
                         parseInt(_m.toString().split('/')[2]) <= new Date().getFullYear() - 13 ?
-                            this._fdPrivateRef
-                                .update({birthday: unescape(_vBd)})
+                            this._fdPrivateRef.child('birthday')
+                                .set(this._bd.val().toLowerCase() === 'n/a' ? null : unescape(this._bd.val()))
                                 .then(() => this._ic(this._bd) && this._icpfs(this._bd, 'event-success', this._fTE, 'Modification avec succès, application des changements dans quelques instants...'))
-                                .catch(b => this._icpfs(this._bd, 'event-error', this._fTE, 'Modification échouée. (' + b.code + ')'))
-                                .finally(() => this._fdPrivateRef.once('value')
-                                    .then(a => a.val().settings.public_birthday &&
-                                        this._fdPublicRef
-                                            .update({birthday: unescape(_vBd)})
-                                            .catch(e => this._icpfs(this._bi, 'event-warning', this._fTE, 'Modification incomplète. (' + e.code + ')')))) :
+                                .catch(b => this._icpfs(this._bd, 'event-error', this._fTE, 'Modification échouée. (' + b.code + ')')) :
                             this._icpfs(this._bd, 'event-error', this._fTE, 'Modification échouée. (age-too-low)') :
                         this._icpfs(this._bd, 'event-error', this._fTE, 'Modification échouée. (input-malformated)')
                     this._lt()
@@ -116,17 +107,11 @@ class UkuaAuthProfile {
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
                     this._icpfs(null, null, this._fTE, 'Chargement...')
-                    let _vBi = this._bi.val()
-                    _vBi ?
-                        this._fdPrivateRef
-                            .update({bio: unescape(_vBi)})
+                    this._bi.val() || (this._bi && this._bi.val().toLowerCase() === 'n/a') ?
+                        this._fdPrivateRef.child('bio')
+                            .set(this._bi.val().toLowerCase() === 'n/a' ? null : unescape(this._bi.val()))
                             .then(() => this._ic(this._bi) && this._icpfs(this._bi, 'event-success', this._fTE, 'Modification avec succès, application des changements dans quelques instants...'))
-                            .catch(e => this._icpfs(this._bi, 'event-error', this._fTE, 'Modification échouée. (' + e.code + ')'))
-                            .finally(() => this._fdPrivateRef.once('value')
-                                .then(a => a.val().settings.public_bio &&
-                                    this._fdPublicRef
-                                        .update({bio: unescape(_vBi)})
-                                        .catch(e => this._icpfs(this._bi, 'event-warning', this._fTE, 'Modification incomplète. (' + e.code + ')')))) :
+                            .catch(e => this._icpfs(this._bi, 'event-error', this._fTE, 'Modification échouée. (' + e.code + ')')) :
                         this._icpfs(this._bi, 'event-error', this._fTE, 'Modification échouée. (input-malformated)')
                     this._lt()
                 })
@@ -138,20 +123,20 @@ class UkuaAuthProfile {
         c && this._fE.addClass(c)
         pf.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;' + s)
         i && i.attr('disabled', null)
-        return true;
+        return true
     }
 
     _ic(i) {
         i.attr('placeholder', unescape(i.val()))
         i.val('')
-        return true;
+        return true
     }
 
     _lt() {
         this._isLT && clearTimeout(this._cT)
         this._isLT = true
         this._cT = setTimeout(() => this._fE.removeClass('show'), 3e3)
-        return true;
+        return true
     }
 }
 

@@ -115,7 +115,7 @@ new UkuaPage(
                                 <i class='fa fa-lock'></i>&nbsp;Mot de passe<span class='text-danger'>*</span>
                             </label>
                             <input autocomplete='off' class='form-control' maxlength='32' minlength='8' name='password'
-                                   pattern='^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,32}$'
+                                   pattern='^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{7,32}$'
                                    required type='password'>
                             <div class='form-tooltips'>
                                 <ul class='list-unstyled border rounded shadow-sm p-1'>
@@ -144,7 +144,7 @@ new UkuaPage(
                                     class='text-danger'>*</span>
                             </label>
                             <input autocomplete='off' class='form-control' name='c_password'
-                                   pattern='^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,32}$'
+                                   pattern='^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{7,32}$'
                                    required type='password'>
                             <div class='form-tooltips'>
                                 <ul class='list-unstyled border rounded shadow-sm p-1'>
@@ -189,88 +189,85 @@ new UkuaPage(
         </div>
     </section>
 </main>",
-    /** @lang JavaScript */ "$(document).ready(() => {
-    firebase.auth().Gc(function (user) {
-        if (user) window.location.replace('/profile')
-    })
-})
+    /** @lang JavaScript */ "class UkuaAuth {
 
-$('form#signIn').submit(function (event) {
-    let loadingEvent = $('form#signIn .form-event')
-    let loadingText = $('form#signIn .form-event #signInText')
-    loadingEvent.removeClass('event-success event-error')
-    loadingEvent.addClass('show')
-    loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Chargement...')
-    event.preventDefault()
-    let values = $(this).serializeArray()
-    let email = values[0]['value']
-    let password = values[1]['value']
-    let remember_me = values.length === 3
-    firebase.auth().wb(remember_me ? firebase.auth.Auth.Persistence.qd : firebase.auth.Auth.Persistence.sd)
-        .then(() => {
-            firebase.auth().Tc(email, password)
-                .then(function () {
-                    loadingEvent.addClass('event-success')
-                    loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Connexion avec succès, redirection dans quelques instants...')
-                })
-                .catch(function (error) {
-                    loadingEvent.addClass('event-error')
-                    loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Connexion échouée. (' + error.code + ')')
-                })
-        })
-        .catch(function (error) {
-            loadingEvent.addClass('event-error')
-            loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Connexion échouée. (' + error.code + ')')
-        })
-})
+    _sIfE
+    _sIfTE
+    _sUfE
+    _sUfTE
+    _fSi
+    _fSu
+    _isLT
+    _cT
 
-$('form#signUp').submit(function (event) {
-    let loadingEvent = $('form#signUp .form-event')
-    let loadingText = $('form#signUp .form-event #signUpText')
-    loadingEvent.removeClass('event-success event-error')
-    loadingEvent.addClass('show')
-    loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Chargement...')
-    event.preventDefault()
-    let values = $(this).serializeArray()
-    let email = values[0]['value']
-    let username = values[1]['value']
-    let password = values[2]['value']
-    let c_password = values[3]['value']
-    if (password === c_password) {
-        firebase.database().ref('users').once('value')
-            .then(function (dataSnapshot) {
-                if (!dataSnapshot.forEach(element => {
-                    if (username === element.val().username)
-                        return true
-                }))
-                    firebase.auth().wb(firebase.auth.Auth.Persistence.sd)
-                        .then(() => {
-                            firebase.auth().dc(email, password)
-                                .then(function () {
-                                    firebase.database().ref('users/' + firebase.auth().currentUser.uid).set({
-                                        'uid': firebase.auth().currentUser.uid,
-                                        'username': username
-                                    })
-                                    loadingEvent.addClass('event-success')
-                                    loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Inscription avec succès, redirection dans quelques instants...')
-                                })
-                                .catch(function (error) {
-                                    loadingEvent.addClass('event-error')
-                                    loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Inscription échouée. (' + error.code + ')')
-                                })
-                        })
-                        .catch(function (error) {
-                            loadingEvent.addClass('event-error')
-                            loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Inscription échouée. (' + error.code + ')')
-                        })
-                else {
-                    loadingEvent.addClass('event-error')
-                    loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Inscription échouée.<br/>Le nom d\'utilisateur est déjà pris.')
-                }
-            })
-    } else {
-        loadingEvent.addClass('event-error')
-        loadingText.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;Inscription échouée.<br/>Les mots de passe ne correspondent pas.')
+    constructor() {
+        firebase.auth().Gc(u => {
+            if (u) window.location.replace('/profile')
+            else {
+                this._sIfE = $('form#signIn .form-event')
+                this._sIfTE = $('form#signIn .form-event #signInText')
+                this._sUfE = $('form#signUp .form-event')
+                this._sUfTE = $('form#signUp .form-event #signUpText')
+                this._fSi = $('form#signIn')
+                this._fSu = $('form#signUp')
+
+                this._fSi.submit(e => {
+                    e.preventDefault()
+                    this._sIfE.removeClass('event-success event-error')
+                    this._sIfE.addClass('show')
+                    this._cefs(null, null, this._sIfTE, 'Chargement...')
+                    let _v = this._fSi.serializeArray(), _e = _v[0]['value'], _p = _v[1]['value'], _r = _v.length === 3
+                    firebase.auth().wb(_r ? firebase.auth.Auth.Persistence.qd : firebase.auth.Auth.Persistence.sd)
+                        .then(() => firebase.auth().Tc(_e, _p)
+                            .then(() => this._cefs('event-success', this._sIfE, this._sIfTE, 'Connexion avec succès, redirection dans quelques instants...'))
+                            .catch(e => this._cefs('event-error', this._sIfE, this._sIfTE, 'Connexion échouée. (' + e.code + ')')))
+                        .catch(e => this._cefs('event-error', this._sIfE, this._sIfTE, 'Connexion échouée. (' + e.code + ')'))
+                    this._lt(this._sIfE)
+                })
+
+                this._fSu.submit(e => {
+                    e.preventDefault()
+                    this._sUfE.removeClass('event-success event-error')
+                    this._sUfE.addClass('show')
+                    this._cefs(null, null, this._sUfTE, 'Chargement...')
+                    let _v = this._fSu.serializeArray(), _e = _v[0]['value'], _u = _v[1]['value'], _p = _v[2]['value'],
+                        _pc = _v[3]['value']
+                    _p === _pc ?
+                        firebase.database().ref('users').orderByChild('username').equalTo(_u).once('value')
+                            .then(a => a.exists() ?
+                                this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (auth/username-already-in-use)') :
+                                firebase.auth().wb(firebase.auth.Auth.Persistence.sd)
+                                    .then(() => firebase.auth().dc(_e, _p)
+                                        .then(() => firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/username').set(_u)
+                                            .then(() => firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/created')
+                                                .set(new Date().toString())
+                                                .then(() => this._cefs('event-success', this._sUfE, this._sUfTE, 'Inscription avec succès, redirection dans quelques instants...'))
+                                                .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
+                                            .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
+                                        .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')))
+                                    .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')))
+                            .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')) :
+                        this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (auth/password-does-not-match)')
+                    this._lt(this._sUfE)
+                })
+            }
+        })
     }
-})"
+
+    _cefs(c, e, t, s) {
+        c && e.addClass(c)
+        t.html('<span class=\'spinner-grow spinner-grow-sm\' role=\'status\'></span>&nbsp;' + s)
+        return true
+    }
+
+    _lt(e) {
+        this._isLT && clearTimeout(this._cT)
+        this._isLT = true
+        this._cT = setTimeout(() => e.removeClass('show'), 3e3)
+        return true
+    }
+
+}
+
+$(document).ready(() => new UkuaAuth())"
 );

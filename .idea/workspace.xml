@@ -3,35 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="709e9013-7770-461e-b9ae-65793924a0a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/auth/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/auth/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/base.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/403.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/css/Bootstrap-Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/css/Bootstrap-Chat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/css/Footer-White.css" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/css/Footer-White.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/css/Scroll-To-Top-Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/css/Scroll-To-Top-Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/css/dropdown.compiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/css/dropdown.compiled.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/js/Scroll-To-Top-Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/js/Scroll-To-Top-Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/js/bs-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/js/bs-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/assets/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/export/assets/js/theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/forgot.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/forgot.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/friend/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/friend/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/friends.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/friends.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/export/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/message/conversasion.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/message/conversasion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/messages.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/export/sign.html" beforeDir="false" afterPath="$PROJECT_DIR$/export/sign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/export/sitemap.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/auth_presence.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/auth_presence.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/auth_profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/auth_profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/loading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/auth.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/legals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +147,7 @@
       <workItem from="1605438517609" duration="196000" />
       <workItem from="1605438748029" duration="44000" />
       <workItem from="1605438817968" duration="653000" />
-      <workItem from="1605462784100" duration="64111000" />
+      <workItem from="1605462784100" duration="70720000" />
     </task>
     <servers />
   </component>

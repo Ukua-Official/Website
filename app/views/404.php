@@ -10,5 +10,5 @@ new UkuaPage(
             </div>
         </div>
     </section>
-</main>",
+</main>"
 );

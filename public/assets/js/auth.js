@@ -11,7 +11,7 @@ class UkuaAuth {
 
     constructor() {
         firebase.auth().Gc(u => {
-            if (u) console.log('go profile')//window.location.replace('/profile')
+            if (u) window.location.replace('/profile')
             else {
                 this._sIfE = $('form#signIn .form-event')
                 this._sIfTE = $('form#signIn .form-event #signInText')
@@ -27,10 +27,9 @@ class UkuaAuth {
                     this._cefs(null, null, this._sIfTE, 'Chargement...')
                     let _v = this._fSi.serializeArray(), _e = _v[0]['value'], _p = _v[1]['value'], _r = _v.length === 3
                     firebase.auth().wb(_r ? firebase.auth.Auth.Persistence.qd : firebase.auth.Auth.Persistence.sd)
-                        .then(() =>
-                            firebase.auth().Tc(_e, _p)
-                                .then(() => this._cefs('event-success', this._sIfE, this._sIfTE, 'Connexion avec succès, redirection dans quelques instants...'))
-                                .catch(e => this._cefs('event-error', this._sIfE, this._sIfTE, 'Connexion échouée. (' + e.code + ')')))
+                        .then(() => firebase.auth().Tc(_e, _p)
+                            .then(() => this._cefs('event-success', this._sIfE, this._sIfTE, 'Connexion avec succès, redirection dans quelques instants...'))
+                            .catch(e => this._cefs('event-error', this._sIfE, this._sIfTE, 'Connexion échouée. (' + e.code + ')')))
                         .catch(e => this._cefs('event-error', this._sIfE, this._sIfTE, 'Connexion échouée. (' + e.code + ')'))
                     this._lt(this._sIfE)
                 })
@@ -43,23 +42,19 @@ class UkuaAuth {
                     let _v = this._fSu.serializeArray(), _e = _v[0]['value'], _u = _v[1]['value'], _p = _v[2]['value'],
                         _pc = _v[3]['value']
                     _p === _pc ?
-                        firebase.database().ref(`users`).orderByChild("username").equalTo(_u).once('value')
-                            .then(a => {
-                                a.exists() ?
-                                    this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (auth/username-already-in-use)') :
-                                    firebase.auth().wb(firebase.auth.Auth.Persistence.sd)
-                                        .then(() =>
-                                            firebase.auth().dc(_e, _p)
-                                                .then(() => {
-                                                    firebase.database().ref(`users/${firebase.auth().currentUser.uid}`).child('username').set(_u)
-                                                        .then(() => firebase.database().ref(`users/${firebase.auth().currentUser.uid}`).child('created').set(new Date().toString())
-                                                            .then(() => this._cefs('event-success', this._sUfE, this._sUfTE, 'Inscription avec succès, redirection dans quelques instants...'))
-                                                            .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
-                                                        .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')'))
-                                                })
-                                                .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')))
-                                        .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')'));
-                            })
+                        firebase.database().ref('users').orderByChild('username').equalTo(_u).once('value')
+                            .then(a => a.exists() ?
+                                this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (auth/username-already-in-use)') :
+                                firebase.auth().wb(firebase.auth.Auth.Persistence.sd)
+                                    .then(() => firebase.auth().dc(_e, _p)
+                                        .then(() => firebase.database().ref(`users/${firebase.auth().currentUser.uid}/username`).set(_u)
+                                            .then(() => firebase.database().ref(`users/${firebase.auth().currentUser.uid}/created`)
+                                                .set(new Date().toString())
+                                                .then(() => this._cefs('event-success', this._sUfE, this._sUfTE, 'Inscription avec succès, redirection dans quelques instants...'))
+                                                .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
+                                            .catch(e => this._cefs('event-warning', this._sUfE, this._sUfTE, 'Inscription imcomplète. (' + e.code + ')')))
+                                        .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')))
+                                    .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')))
                             .catch(e => this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (' + e.code + ')')) :
                         this._cefs('event-error', this._sUfE, this._sUfTE, 'Inscription échouée. (auth/password-does-not-match)')
                     this._lt(this._sUfE)

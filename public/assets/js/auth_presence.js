@@ -8,7 +8,6 @@ class UkuaAuthPresence {
     }
 
     _li(_b, u) {
-        console.log(_b, u.uid)
         !_b && this._cI && clearInterval(this._cI)
         !_b && firebase.database().ref(`ukua/${u.uid}/last_online`).set(null)
         _b && (this._cI = setInterval(() => firebase.database().ref(`ukua/${u.uid}/last_online`).set(new Date().toString()), 60000))

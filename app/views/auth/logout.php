@@ -13,4 +13,5 @@ new UkuaPage(
             });
         window.location.replace('/')
     })
-})");
+})"
+);
