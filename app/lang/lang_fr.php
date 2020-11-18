@@ -33,5 +33,6 @@ UkuaMessages::loadMessages('fr', [
     '404-desc' => "",
     '403-desc' => "",
     'Logout-desc' => "",
+    'Profile-desc' => "",
     'Auth-desc' => ""
 ]);

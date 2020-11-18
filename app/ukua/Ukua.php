@@ -47,12 +47,12 @@ class Ukua
         /*//TODO: @Route 'contact'
         self::$router->map('GET', '/contact', function () {
             require_once __DIR__ . '/../../app/views/contact.php';
-        }, 'contact');
+        }, 'contact');*/
 
         //TODO: @Route 'profile'
         self::$router->map('GET', '/profile', function () {
             require_once __DIR__ . '/../../app/views/profile.php';
-        }, 'profile');*/
+        }, 'profile');
 
         //TODO: @Route 'legals'
         self::$router->map('GET', '/legals', function () {
