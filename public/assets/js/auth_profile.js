@@ -11,6 +11,9 @@ class UkuaAuthProfile {
     _bd
     _bi
     _e
+    _lT
+    _dT
+    _cssT
     _isLT
     _cT
 
@@ -27,9 +30,18 @@ class UkuaAuthProfile {
                 this._bd = $('#birthday')
                 this._bi = $('#bio')
                 this._e = $('#email')
+                this._lT = $('#lightTheme')
+                this._dT = $('#darkTheme')
+                this._cssT = $('#cssTheme')
                 this._e.attr('placeholder', u.email)
                 this._fdPrivateRef = firebase.database().ref(`ukua/${u.uid}`)
                 this._fdPublicRef = firebase.database().ref(`users/${u.uid}`)
+                if (Cookies.get('UkuaTheme')) {
+                    //delete
+                    this._cssT.attr('href', 'assets/css/' + Cookies.get('UkuaTheme') + '.css')
+
+                    Cookies.get('UkuaTheme') === 'light' ? this._dT.removeClass('disabled') : this._lT.removeClass('disabled')
+                } else this._dT.removeClass('disabled')
                 this._fdPublicRef.once('value')
                     .then(d => this._pUrl.attr('placeholder', d.val().photoUrl ? unescape(d.val().photoUrl) : 'N/A') && this._u.attr('placeholder', unescape(d.val().username)))
                     .catch(e => this._pE.addClass('show') && this._pTE.append('<h3 class=\'p-1\'>Impossible de charger la partie publique du profil. (' + e.toString() + ')</h3>'))
@@ -115,6 +127,9 @@ class UkuaAuthProfile {
                         this._icpfs(this._bi, 'event-error', this._fTE, 'Modification échouée. (input-malformated)')
                     this._lt()
                 })
+
+                this._lT.click(() => Cookies.set('UkuaTheme', 'light', {expires: 365}) && this._cssT.attr('href', 'assets/css/light.css') && this._lT.addClass('disabled') && this._dT.removeClass('disabled'))
+                this._dT.click(() => Cookies.set('UkuaTheme', 'dark', {expires: 365}) && this._cssT.attr('href', 'assets/css/dark.css') && this._dT.addClass('disabled') && this._lT.removeClass('disabled'))
             }
         })
     }

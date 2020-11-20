@@ -26,7 +26,7 @@
     <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link href="/public/assets/css/<?php echo UkuaPage::getTheme(); ?>.css" rel="stylesheet">
+    <link href="/public/assets/css/<?php echo UkuaPage::getTheme(); ?>.css" id="cssTheme" rel="stylesheet">
     <link href="/public/assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -170,9 +170,9 @@
                                     '<li class=\'navigation-item\'><a class=\'navigation-link\' href=\'/messages\'><i class=\'fa fa-envelope-o\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Messages', Ukua::getLang()); ?><span class=\'badge badge-pill badge-danger float-right notification\' id=\'nav-messages\'>?</span></a></li>' +
                                     '<li class=\'navigation-item dropdown\'><a class=\'dropdown-toggle navigation-link\' data-toggle=\'dropdown\'><img alt=\'X\' class=\'rounded-circle\' height=\'20\' loading=\'lazy\' src=\'' + (b.val() ? unescape(b.val()) : 'https://www.gravatar.com/avatar?s=128') + '\' width=\'20\'>&nbsp;' + a.val() + '</a>' +
                                     '<div class=\'dropdown-menu border-0 p-0\'>' +
-                                    '<div class=\'gradient item-1\'><a class=\'dropdown-item\' href=\'/profile\'><i class=\'fa fa-user\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Profile', Ukua::getLang()); ?></a></div>' +
+                                    '<div class=\'gradient item-1\'><a class=\'dropdown-item\' href=\'/auth/profile\'><i class=\'fa fa-user\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Profile', Ukua::getLang()); ?></a></div>' +
                                     '<div class=\'gradient item-2\'><a class=\'dropdown-item\' href=\'/auth/settings\'><i class=\'fa fa-gear\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Settings', Ukua::getLang()); ?></a></div>' +
-                                    '<div class=\'gradient item-3\'><a class=\'dropdown-item\' href=\'/logout\'><i class=\'fa fa-sign-out\'></i>&nbsp;<?php echo UkuaMessages::getMessage('ToLogOut', Ukua::getLang()); ?></a></div>' +
+                                    '<div class=\'gradient item-3\'><a class=\'dropdown-item\' href=\'/auth/logout\'><i class=\'fa fa-sign-out\'></i>&nbsp;<?php echo UkuaMessages::getMessage('ToLogOut', Ukua::getLang()); ?></a></div>' +
                                     '</div>' +
                                     '</li>') &&
                                 this._mP.addClass('show'))

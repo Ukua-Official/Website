@@ -40,29 +40,31 @@ class Ukua
         self::$router->map('GET', '/', function () {
             require_once __DIR__ . '/../../app/views/home.php';
         }, 'home');
-        //TODO: @Route 'status'
-        self::$router->map('GET', '/status', function () {
-            require_once __DIR__ . '/../../app/views/status.php';
-        }, 'status');
-        /*//TODO: @Route 'contact'
-        self::$router->map('GET', '/contact', function () {
-            require_once __DIR__ . '/../../app/views/contact.php';
-        }, 'contact');*/
-
-        //TODO: @Route 'profile'
-        self::$router->map('GET', '/profile', function () {
-            require_once __DIR__ . '/../../app/views/profile.php';
-        }, 'profile');
 
         //TODO: @Route 'legals'
         self::$router->map('GET', '/legals', function () {
             require_once __DIR__ . '/../../app/views/legals.php';
         }, 'legals');
 
+        //TODO: @Route 'status'
+        self::$router->map('GET', '/status', function () {
+            require_once __DIR__ . '/../../app/views/status.php';
+        }, 'status');
+
+        /*//TODO: @Route 'contact'
+        self::$router->map('GET', '/contact', function () {
+            require_once __DIR__ . '/../../app/views/contact.php';
+        }, 'contact');*/
+
         //TODO: @Route 'auth-sign'
         self::$router->map('GET', '/auth', function () {
             require_once __DIR__ . '/../../app/views/auth/auth.php';
         }, 'auth-sign');
+
+        //TODO: @Route 'auth-profile'
+        self::$router->map('GET', '/auth/profile', function () {
+            require_once __DIR__ . '/../../app/views/auth/profile.php';
+        }, 'auth-profile');
 
         //TODO: @Route 'auth-logout'
         self::$router->map('GET', '/auth/logout', function () {

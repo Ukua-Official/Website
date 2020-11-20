@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <!--suppress HtmlFormInputWithoutLabel -->
-<html lang="fr">
+<html lang='fr'>
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'>
     <title>Home - Ukua</title>
-    <meta content="Ukua" name="description">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link href="assets/css/light.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <meta content='Ukua' name='description'>
+    <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' rel='stylesheet'>
+    <link href='assets/css/light.css' id='cssTheme' rel='stylesheet'>
+    <link href='assets/css/style.css' rel='stylesheet'>
 </head>
 
 <body>
 
-<nav class="navigation-bar navigation-expand-lg fixed-top gradient">
-    <div class="container-fluid">
-        <a class="navigation-title pulse animated infinite logo" href="/">Ukua</a>
-        <button class="navigation-toggler" data-target="#navbarNav" data-toggle="collapse">
-            <span class="navigation-toggler-icon">
+<nav class='navigation-bar navigation-expand-lg fixed-top gradient'>
+    <div class='container-fluid'>
+        <a class='navigation-title pulse animated infinite logo' href='/'>Ukua</a>
+        <button class='navigation-toggler' data-target='#navbarNav' data-toggle='collapse'>
+            <span class='navigation-toggler-icon'>
                 <span></span>
                 <span></span>
                 <span></span>
             </span>
         </button>
-        <div class="collapse navigation-collapse" id="navbarNav">
-            <ul class="navigation navigation-list ml-auto" id="navList">
-                <li class="navigation-item">
-                    <a class="navigation-link" href="/home"><i class="fa fa-home"></i>&nbsp;Accueil</a>
+        <div class='collapse navigation-collapse' id='navbarNav'>
+            <ul class='navigation navigation-list ml-auto' id='navList'>
+                <li class='navigation-item'>
+                    <a class='navigation-link' href='/home'><i class='fa fa-home'></i>&nbsp;Accueil</a>
                 </li>
-                <li class="navigation-item" id="navLoading">
-                    <a class="navigation-link loading">
-                        <i class="spinner-border spinner-border-sm" role="status"></i>
+                <li class='navigation-item' id='navLoading'>
+                    <a class='navigation-link loading'>
+                        <i class='spinner-border spinner-border-sm' role='status'></i>
                         &nbsp;Chargement...
                     </a>
                 </li>
@@ -42,127 +42,129 @@
     </div>
 </nav>
 
-<div class="page-event container m-0 min-vw-100">
-    <div class="p-1" id="pageTextEvent"></div>
+<div class='page-event container m-0 min-vw-100'>
+    <div class='p-1' id='pageTextEvent'></div>
 </div>
 
-<main class="page">
-    <section class="page-section block profile">
-        <div class="container">
-            <h2 class="text-center pb-5">Profil</h2>
-            <div class="form-event">
-                <ul class="list-unstyled border rounded shadow-sm p-2">
-                    <li class="text-center" id="formTextEvent">
-                        <span class="spinner-grow spinner-grow-sm" role="status"></span>
+<main class='page'>
+    <section class='page-section block profile'>
+        <div class='container'>
+            <h2 class='text-center pb-5'>Profil</h2>
+            <div class='form-event'>
+                <ul class='list-unstyled border rounded shadow-sm p-2'>
+                    <li class='text-center' id='formTextEvent'>
+                        <span class='spinner-grow spinner-grow-sm' role='status'></span>
                     </li>
                 </ul>
             </div>
-            <div class="form-row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-photo"></i>&nbsp;Photo de profil</span>
+            <div class='form-row'>
+                <div class='col-md-6'>
+                    <div class='form-group'>
+                        <div class='input-group'>
+                            <div class='input-group-prepend'>
+                                <span class='input-group-text'><i class='fa fa-photo'></i>&nbsp;Photo de profil</span>
                             </div>
-                            <input autocomplete="off" class="form-control" id="photoUrl" placeholder="Chargement..."
-                                   type="url">
-                            <div class="input-group-append">
-                                <button class="btn ukua-btn btn-block" id="btnPhotoUrl" type="submit">
-                                    <i class="fa fa-edit"></i>
+                            <input autocomplete='off' class='form-control' id='photoUrl' placeholder='Chargement...'
+                                   type='url'>
+                            <div class='input-group-append'>
+                                <button class='btn ukua-btn btn-block' id='btnPhotoUrl' type='submit'>
+                                    <i class='fa fa-edit'></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend"><span class="input-group-text"><i
-                                    class="fa fa-id-card-o"></i>&nbsp;Adresse mail</span>
+                <div class='col-md-6'>
+                    <div class='form-group'>
+                        <div class='input-group'>
+                            <div class='input-group-prepend'><span class='input-group-text'><i
+                                    class='fa fa-id-card-o'></i>&nbsp;Adresse mail</span>
                             </div>
-                            <input autocomplete="off" class="form-control" id="email" placeholder="Chargement..."
-                                   type="email">
-                            <div class="input-group-append">
-                                <button class="btn ukua-btn btn-block" id="btnEMail" type="submit">
-                                    <i class="fa fa-edit"></i>
+                            <input autocomplete='off' class='form-control' id='email' placeholder='Chargement...'
+                                   type='email'>
+                            <div class='input-group-append'>
+                                <button class='btn ukua-btn btn-block' id='btnEMail' type='submit'>
+                                    <i class='fa fa-edit'></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-tag"></i>&nbsp;Nom d'utilisateur</span>
+                <div class='col-md-6'>
+                    <div class='form-group'>
+                        <div class='input-group'>
+                            <div class='input-group-prepend'>
+                                <span class='input-group-text'><i class='fa fa-tag'></i>&nbsp;Nom d'utilisateur</span>
                             </div>
-                            <input autocomplete="off" class="form-control" id="username" maxlength="16" minlength="3"
-                                   placeholder="Chargement...">
-                            <div class="input-group-append">
-                                <button class="btn ukua-btn btn-block" id="btnUsername" type="submit">
-                                    <i class="fa fa-edit"></i>
+                            <input autocomplete='off' class='form-control' id='username' maxlength='16' minlength='3'
+                                   placeholder='Chargement...'>
+                            <div class='input-group-append'>
+                                <button class='btn ukua-btn btn-block' id='btnUsername' type='submit'>
+                                    <i class='fa fa-edit'></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i
-                                        class="fa fa-birthday-cake"></i>&nbsp;Anniversaire</span>
+                <div class='col-md-6'>
+                    <div class='form-group'>
+                        <div class='input-group'>
+                            <div class='input-group-prepend'>
+                                <span class='input-group-text'><i
+                                        class='fa fa-birthday-cake'></i>&nbsp;Anniversaire</span>
                             </div>
-                            <input autocomplete="off" class="form-control" id="birthday" maxlength="10" minlength="8"
-                                   placeholder="Chargement...">
-                            <div class="input-group-append">
-                                <button class="btn ukua-btn btn-block" id="btnBirthday" type="submit">
-                                    <i class="fa fa-edit"></i>
+                            <input autocomplete='off' class='form-control' id='birthday' maxlength='10' minlength='8'
+                                   placeholder='Chargement...'>
+                            <div class='input-group-append'>
+                                <button class='btn ukua-btn btn-block' id='btnBirthday' type='submit'>
+                                    <i class='fa fa-edit'></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-eye"></i>&nbsp;Bio</span>
+                <div class='col-md-12'>
+                    <div class='form-group'>
+                        <div class='input-group'>
+                            <div class='input-group-prepend'>
+                                <span class='input-group-text'><i class='fa fa-eye'></i>&nbsp;Bio</span>
                             </div>
-                            <input autocomplete="off" class="form-control" id="bio" placeholder="Chargement..."/>
-                            <div class="input-group-append">
-                                <button class="btn ukua-btn btn-block" id="btnBio" type="submit">
-                                    <i class="fa fa-edit"></i>
+                            <input autocomplete='off' class='form-control' id='bio' placeholder='Chargement...'/>
+                            <div class='input-group-append'>
+                                <button class='btn ukua-btn btn-block' id='btnBio' type='submit'>
+                                    <i class='fa fa-edit'></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="form-group" style="width: fit-content;">
-                        <div class="input-group" style="width: fit-content;">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="border-radius: .25rem;"><i
-                                        class="fa fa-users"></i>&nbsp;? amis</span>
+                <div class='col-md-4 d-flex justify-content-center'>
+                    <div class='form-group' style='width: fit-content;'>
+                        <div class='input-group' style='width: fit-content;'>
+                            <div class='input-group-prepend'>
+                                <span class='input-group-text' style='border-radius: .25rem;'><i
+                                        class='fa fa-users'></i>&nbsp;? amis</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="form-group" style="width: fit-content;">
-                        <div class="input-group" style="width: fit-content;">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="border-radius: .25rem;">'?' thème</span>
-                            </div>
+                <div class='col-md-4 d-flex justify-content-center'>
+                    <div class='dropdown'>
+                        <button aria-expanded='false' class='btn ukua-btn dropdown-toggle' data-toggle='dropdown'
+                                type='button'>Thème
+                        </button>
+                        <div class='dropdown-menu'>
+                            <a class='dropdown-item disabled' id='lightTheme'><i class='fas fa-sun'></i>&nbsp;Light</a>
+                            <a class='dropdown-item disabled' id='darkTheme'><i class='fas fa-moon'></i>&nbsp;Dark</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="form-group" style="width: fit-content;">
-                        <div class="input-group" style="width: fit-content;">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" style="border-radius: .25rem;"><i
-                                        class="fa fa-envelope"></i>&nbsp;? discussions</span>
+                <div class='col-md-4 d-flex justify-content-center'>
+                    <div class='form-group' style='width: fit-content;'>
+                        <div class='input-group' style='width: fit-content;'>
+                            <div class='input-group-prepend'>
+                                <span class='input-group-text' style='border-radius: .25rem;'><i
+                                        class='fa fa-envelope'></i>&nbsp;? discussions</span>
                             </div>
                         </div>
                     </div>
@@ -172,74 +174,74 @@
     </section>
 </main>
 
-<footer class="footer">
-    <div class="shadow footer-spacer"></div>
-    <div class="container">
-        <div class="row d-flex justify-content-center align-items-start">
-            <div class="col-sm-12 col-md-12 col-lg-4 item text">
+<footer class='footer'>
+    <div class='shadow footer-spacer'></div>
+    <div class='container'>
+        <div class='row d-flex justify-content-center align-items-start'>
+            <div class='col-sm-12 col-md-12 col-lg-4 item text'>
                 <h3>
-                    <i class="fa fa-bullhorn"></i>
+                    <i class='fa fa-bullhorn'></i>
                     &nbsp;Qu'est-ce dont Ukua ?
                 </h3>
-                <p class="text-left">
+                <p class='text-left'>
                     Ukua est un service de messagerie entre proches amis, professionnels... cela vous permet de faire de
                     nouvelle rencontre a travers le monde... nous nous livrons à écouter nos utilisateurs pour nous
                     améliorer et vous satisfaire...
                 </p>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 item">
+            <div class='col-sm-12 col-md-6 col-lg-3 item'>
                 <h3>
-                    <i class="fa fa-external-link"></i>
+                    <i class='fa fa-external-link'></i>
                     &nbsp;Liens
                 </h3>
                 <ul>
                     <li>
-                        <a class="d-flex align-items-center" href="#">
-                            <i class="fa fa-chevron-right"></i>
+                        <a class='d-flex align-items-center' href='#'>
+                            <i class='fa fa-chevron-right'></i>
                             &nbsp;Équipe
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center" href="#">
-                            <i class="fa fa-chevron-right"></i>
+                        <a class='d-flex align-items-center' href='#'>
+                            <i class='fa fa-chevron-right'></i>
                             &nbsp;Partenaire
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center" href="#">
-                            <i class="fa fa-chevron-right"></i>
+                        <a class='d-flex align-items-center' href='#'>
+                            <i class='fa fa-chevron-right'></i>
                             &nbsp;Contact
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 item">
+            <div class='col-sm-12 col-md-6 col-lg-4 item'>
                 <h3>
-                    <i class="fa fa-list-alt"></i>
+                    <i class='fa fa-list-alt'></i>
                     &nbsp;Autres
                 </h3>
                 <ul>
                     <li>
-                        <a class="d-flex align-items-center" href="#">
-                            <i class="fa fa-chevron-right"></i>
+                        <a class='d-flex align-items-center' href='#'>
+                            <i class='fa fa-chevron-right'></i>
                             &nbsp;Mentions légales
                         </a>
-                        <a class="d-flex align-items-center" href="#">
-                            <i class="fa fa-chevron-right"></i>
+                        <a class='d-flex align-items-center' href='#'>
+                            <i class='fa fa-chevron-right'></i>
                             &nbsp;Conditions d'utilisations
                         </a>
-                        <a class="d-flex align-items-center" href="#">
-                            <i class="fa fa-chevron-right"></i>
+                        <a class='d-flex align-items-center' href='#'>
+                            <i class='fa fa-chevron-right'></i>
                             &nbsp;Status des serveurs&nbsp;
-                            <i class="fa fa-server" id="status"></i>
+                            <i class='fa fa-server' id='status'></i>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <p class="copyright">
+        <p class='copyright'>
             Développer avec&nbsp;
-            <i class="fa fa-heart"></i>
+            <i class='fa fa-heart'></i>
             &nbsp;par <strong>Levasseur Wesley</strong>
             <br/>
             <strong>Ukua</strong> &copy; 2020 - Tous droits réservés.
@@ -247,23 +249,23 @@
     </div>
 </footer>
 
-<span class="btn ukua-btn btn-lg box-shadow scrollToTopButton" role="button">
-    <i class="fa fa-arrow-up"></i>
+<span class='btn ukua-btn btn-lg box-shadow scrollToTopButton' role='button'>
+    <i class='fa fa-arrow-up'></i>
 </span>
 
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
-<script defer src="assets/js/firebase-init.js"></script>
-<script defer src="assets/js/main.js"></script>
-<script defer src="assets/js/loading.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js'></script>
+<script defer src='https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js'></script>
+<script defer src='https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js'></script>
+<script defer src='https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js'></script>
+<script defer src='https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js'></script>
+<script defer src='assets/js/firebase-init.js'></script>
+<script defer src='assets/js/main.js'></script>
+<script defer src='assets/js/loading.js'></script>
 
-<script src="assets/js/auth_profile.js"></script>
-<script src="assets/js/auth_presence.js"></script>
+<script src='assets/js/auth_profile.js'></script>
+<script src='assets/js/auth_presence.js'></script>
 
 </body>
 

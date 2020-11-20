@@ -21,7 +21,7 @@ new UkuaPage(
                             <div class='input-group-prepend'>
                                 <span class='input-group-text'><i class='fa fa-photo'></i>&nbsp;Photo de profil</span>
                             </div>
-                            <input autocomplete='off' class='form-control' id='photoUrl' placeholder='Chargement...'
+                            <input autocomplete='off' class='form-control' id='photoUrl' placeholder='" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "'
                                    type='url'>
                             <div class='input-group-append'>
                                 <button class='btn ukua-btn btn-block' id='btnPhotoUrl' type='submit'>
@@ -37,7 +37,7 @@ new UkuaPage(
                             <div class='input-group-prepend'><span class='input-group-text'><i
                                     class='fa fa-id-card-o'></i>&nbsp;Adresse mail</span>
                             </div>
-                            <input autocomplete='off' class='form-control' id='email' placeholder='Chargement...'
+                            <input autocomplete='off' class='form-control' id='email' placeholder='" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "'
                                    type='email'>
                             <div class='input-group-append'>
                                 <button class='btn ukua-btn btn-block' id='btnEMail' type='submit'>
@@ -54,7 +54,7 @@ new UkuaPage(
                                 <span class='input-group-text'><i class='fa fa-tag'></i>&nbsp;Nom d'utilisateur</span>
                             </div>
                             <input autocomplete='off' class='form-control' id='username' maxlength='16' minlength='3'
-                                   placeholder='Chargement...'>
+                                   placeholder='" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "'>
                             <div class='input-group-append'>
                                 <button class='btn ukua-btn btn-block' id='btnUsername' type='submit'>
                                     <i class='fa fa-edit'></i>
@@ -71,7 +71,7 @@ new UkuaPage(
                                         class='fa fa-birthday-cake'></i>&nbsp;Anniversaire</span>
                             </div>
                             <input autocomplete='off' class='form-control' id='birthday' maxlength='10' minlength='8'
-                                   placeholder='Chargement...'>
+                                   placeholder='" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "'>
                             <div class='input-group-append'>
                                 <button class='btn ukua-btn btn-block' id='btnBirthday' type='submit'>
                                     <i class='fa fa-edit'></i>
@@ -86,7 +86,7 @@ new UkuaPage(
                             <div class='input-group-prepend'>
                                 <span class='input-group-text'><i class='fa fa-eye'></i>&nbsp;Bio</span>
                             </div>
-                            <input autocomplete='off' class='form-control' id='bio' placeholder='Chargement...'/>
+                            <input autocomplete='off' class='form-control' id='bio' placeholder='" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "'/>
                             <div class='input-group-append'>
                                 <button class='btn ukua-btn btn-block' id='btnBio' type='submit'>
                                     <i class='fa fa-edit'></i>
@@ -106,11 +106,13 @@ new UkuaPage(
                     </div>
                 </div>
                 <div class='col-md-4 d-flex justify-content-center'>
-                    <div class='form-group' style='width: fit-content;'>
-                        <div class='input-group' style='width: fit-content;'>
-                            <div class='input-group-prepend'>
-                                <span class='input-group-text' style='border-radius: .25rem;'>'?' thème</span>
-                            </div>
+                    <div class='dropdown'>
+                        <button aria-expanded='false' class='btn ukua-btn dropdown-toggle' data-toggle='dropdown'
+                                type='button'>Thème
+                        </button>
+                        <div class='dropdown-menu'>
+                            <a class='dropdown-item disabled' id='lightTheme'><i class='fas fa-sun'></i>&nbsp;Light</a>
+                            <a class='dropdown-item disabled' id='darkTheme'><i class='fas fa-moon'></i>&nbsp;Dark</a>
                         </div>
                     </div>
                 </div>
@@ -141,6 +143,9 @@ new UkuaPage(
     _bd
     _bi
     _e
+    _lT
+    _dT
+    _cssT
     _isLT
     _cT
 
@@ -158,8 +163,13 @@ new UkuaPage(
                 this._bi = $('#bio')
                 this._e = $('#email')
                 this._e.attr('placeholder', u.email)
+                this._lT = $('#lightTheme')
+                this._dT = $('#darkTheme')
+                this._cssT = $('#cssTheme')
                 this._fdPrivateRef = firebase.database().ref('ukua/' + u.uid)
                 this._fdPublicRef = firebase.database().ref('users/' + u.uid)
+                if (Cookies.get('UkuaTheme')) Cookies.get('UkuaTheme') === 'light' ? this._dT.removeClass('disabled') : this._lT.removeClass('disabled')
+                else this._dT.removeClass('disabled')
                 this._fdPublicRef.once('value')
                     .then(d => this._pUrl.attr('placeholder', d.val().photoUrl ? unescape(d.val().photoUrl) : 'N/A') && this._u.attr('placeholder', unescape(d.val().username)))
                     .catch(e => this._pE.addClass('show') && this._pTE.append('<h3 class=\'p-1\'>Impossible de charger la partie publique du profil. (' + e.toString() + ')</h3>'))
@@ -175,8 +185,8 @@ new UkuaPage(
                     this._pUrl.attr('disabled', '')
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
-                    this._icpfs(null, null, this._fTE, 'Chargement...')
-                    this._pUrl.val() && (this._pUrl.val().toLowerCase() === 'n/a' || this._pUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\\+.~#?&/=]*)/))) ?
+                    this._icpfs(null, null, this._fTE, '" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "')
+                    this._pUrl.val() && (this._pUrl.val().toLowerCase() === 'n/a' || this._pUrl.val().match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}([-a-zA-Z0-9()@:%_\+.~#?&/=]*)/))) ?
                         this._fdPublicRef.child('photoUrl')
                             .set(this._pUrl.val().toLowerCase() === 'n/a' ? null : unescape(this._pUrl.val()))
                             .then(() => this._ic(this._pUrl) && this._icpfs(this._pUrl, 'event-success', this._fTE, 'Modification avec succès, application des changements dans quelques instants...'))
@@ -189,7 +199,7 @@ new UkuaPage(
                     this._e.attr('disabled', '')
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
-                    this._icpfs(null, null, this._fTE, 'Chargement...')
+                    this._icpfs(null, null, this._fTE, '" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "')
                     this._e.val() && this._e.val().match(new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) ?
                         firebase.auth().currentUser.Ab(this._e.val())
                             .then(() => this._ic(this._e) && this._icpfs(this._e, 'event-success', this._fTE, 'Modification avec succès, application des changements dans quelques instants...'))
@@ -202,7 +212,7 @@ new UkuaPage(
                     this._u.attr('disabled', '')
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
-                    this._icpfs(null, null, this._fTE, 'Chargement...')
+                    this._icpfs(null, null, this._fTE, '" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "')
                     this._u.val() && this._u.val().match(new RegExp(/([a-zA-Z_.0-9]).{2,16}/gi)) ?
                         firebase.database().ref('users').orderByChild('username').equalTo(this._u.val()).once('value')
                             .then(a => a.exists() ? this._icpfs(this._u, 'event-error', this._fTE, 'Modification échouée. (auth/username-already-in-use)') :
@@ -219,7 +229,7 @@ new UkuaPage(
                     this._bd.attr('disabled', '')
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
-                    this._icpfs(null, null, this._fTE, 'Chargement...')
+                    this._icpfs(null, null, this._fTE, '" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "')
                     let _m
                     this._bd.val() && (this._bd.val().toLowerCase() === 'n/a' || (_m = this._bd.val().match(new RegExp(/(0?[1-9]|[1-2][0-9]|3[0-1])[\/](0?[1-9]|1[0-2])[\/](\d{4})/gi)))) ?
                         parseInt(_m.toString().split('/')[2]) <= new Date().getFullYear() - 13 ?
@@ -236,7 +246,7 @@ new UkuaPage(
                     this._bi.attr('disabled', '')
                     this._fE.removeClass('event-success event-error')
                     this._fE.addClass('show')
-                    this._icpfs(null, null, this._fTE, 'Chargement...')
+                    this._icpfs(null, null, this._fTE, '" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "')
                     this._bi.val() || (this._bi && this._bi.val().toLowerCase() === 'n/a') ?
                         this._fdPrivateRef.child('bio')
                             .set(this._bi.val().toLowerCase() === 'n/a' ? null : unescape(this._bi.val()))
@@ -246,6 +256,8 @@ new UkuaPage(
                     this._lt()
                 })
             }
+            this._lT.click(() => Cookies.set('UkuaTheme', 'light', {expires: 365}) && this._cssT.attr('href', 'assets/css/light.css') && this._lT.addClass('disabled') && this._dT.removeClass('disabled'))
+            this._dT.click(() => Cookies.set('UkuaTheme', 'dark', {expires: 365}) && this._cssT.attr('href', 'assets/css/dark.css') && this._dT.addClass('disabled') && this._lT.removeClass('disabled'))
         })
     }
 

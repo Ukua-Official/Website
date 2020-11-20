@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="709e9013-7770-461e-b9ae-65793924a0a1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lang/lang_en.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/lang_en.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lang/lang_fr.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/lang_fr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ukua/Ukua.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ukua/Ukua.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/auth/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/auth_profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/auth_profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +82,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/auth" />
       <recent name="$PROJECT_DIR$/public/assets/css" />
       <recent name="$PROJECT_DIR$/public/assets/js" />
       <recent name="$PROJECT_DIR$/env" />
       <recent name="$PROJECT_DIR$/export" />
-      <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/assets/css" />
@@ -132,7 +133,7 @@
       <workItem from="1605438517609" duration="196000" />
       <workItem from="1605438748029" duration="44000" />
       <workItem from="1605438817968" duration="653000" />
-      <workItem from="1605462784100" duration="71739000" />
+      <workItem from="1605462784100" duration="78452000" />
     </task>
     <servers />
   </component>
