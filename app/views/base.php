@@ -167,7 +167,7 @@
                                 this._nLa.remove() &&
                                 this._nLi.append(
                                     '<li class=\'navigation-item\'><a class=\'navigation-link\' href=\'/friends\'><i class=\'fa fa-users\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Friends', Ukua::getLang()); ?><span class=\'badge badge-pill badge-danger float-right notification\' id=\'nav-friends\'>?</span></a></li>' +
-                                    '<li class=\'navigation-item\'><a class=\'navigation-link\' href=\'/messages\'><i class=\'fa fa-envelope-o\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Messages', Ukua::getLang()); ?><span class=\'badge badge-pill badge-danger float-right notification\' id=\'nav-messages\'>?</span></a></li>' +
+                                    '<li class=\'navigation-item\'><a class=\'navigation-link\' href=\'/messages\'><i class=\'fa fa-envelope\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Messages', Ukua::getLang()); ?><span class=\'badge badge-pill badge-danger float-right notification\' id=\'nav-messages\'>?</span></a></li>' +
                                     '<li class=\'navigation-item dropdown\'><a class=\'dropdown-toggle navigation-link\' data-toggle=\'dropdown\'><img alt=\'X\' class=\'rounded-circle\' height=\'20\' loading=\'lazy\' src=\'' + (b.val() ? unescape(b.val()) : 'https://www.gravatar.com/avatar?s=128') + '\' width=\'20\'>&nbsp;' + a.val() + '</a>' +
                                     '<div class=\'dropdown-menu border-0 p-0\'>' +
                                     '<div class=\'gradient item-1\'><a class=\'dropdown-item\' href=\'/auth/profile\'><i class=\'fa fa-user\'></i>&nbsp;<?php echo UkuaMessages::getMessage('Profile', Ukua::getLang()); ?></a></div>' +

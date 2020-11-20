@@ -202,7 +202,7 @@ new UkuaPage(
 
     constructor() {
         firebase.auth().Gc(u => {
-            if (u) window.location.replace('/profile')
+            if (u) window.location.replace('/auth/profile')
             else {
                 this._sIfE = $('form#signIn .form-event')
                 this._sIfTE = $('form#signIn .form-event #signInText')

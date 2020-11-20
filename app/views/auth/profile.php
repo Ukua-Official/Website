@@ -35,7 +35,7 @@ new UkuaPage(
                     <div class='form-group'>
                         <div class='input-group'>
                             <div class='input-group-prepend'><span class='input-group-text'><i
-                                    class='fa fa-id-card-o'></i>&nbsp;Adresse mail</span>
+                                    class='fa fa-envelope'></i>&nbsp;Adresse mail</span>
                             </div>
                             <input autocomplete='off' class='form-control' id='email' placeholder='" . UkuaMessages::getMessage('Loading', Ukua::getLang()) . "'
                                    type='email'>
@@ -256,8 +256,8 @@ new UkuaPage(
                     this._lt()
                 })
             }
-            this._lT.click(() => Cookies.set('UkuaTheme', 'light', {expires: 365}) && this._cssT.attr('href', 'assets/css/light.css') && this._lT.addClass('disabled') && this._dT.removeClass('disabled'))
-            this._dT.click(() => Cookies.set('UkuaTheme', 'dark', {expires: 365}) && this._cssT.attr('href', 'assets/css/dark.css') && this._dT.addClass('disabled') && this._lT.removeClass('disabled'))
+            this._lT.click(() => Cookies.set('UkuaTheme', 'light', {expires: 365}) && this._cssT.attr('href', '/public/assets/css/light.css') && this._lT.addClass('disabled') && this._dT.removeClass('disabled'))
+            this._dT.click(() => Cookies.set('UkuaTheme', 'dark', {expires: 365}) && this._cssT.attr('href', '/public/assets/css/dark.css') && this._dT.addClass('disabled') && this._lT.removeClass('disabled'))
         })
     }
 
