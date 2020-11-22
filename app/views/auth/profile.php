@@ -112,7 +112,7 @@ new UkuaPage(
                         </button>
                         <div class='dropdown-menu'>
                             <a class='dropdown-item disabled' id='lightTheme'><i class='fa fa-sun-o'></i>&nbsp;Light</a>
-                            <a class='dropdown-item disabled' id='darkTheme'><i class='fa fa-moon-o'></i>&nbsp;Dark</a>
+                            <a class='dropdown-item disabled' id='darkTheme'<i class='fa fa-moon-o'></i>&nbsp;Dark</a>
                         </div>
                     </div>
                 </div>
