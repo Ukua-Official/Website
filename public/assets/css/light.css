@@ -18,4 +18,7 @@
     --btn-shadow: rgba(50, 174, 255, .5);
     --btn-background-color-na: #0084da;
     --btn-border-color-na: #007ccd;
+    --input-group-text-color: #495057;
+    --input-group-text-background: #e9ecef;
+    --input-group-placeholder: #666666;
 }

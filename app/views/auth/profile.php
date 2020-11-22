@@ -105,14 +105,14 @@ new UkuaPage(
                         </div>
                     </div>
                 </div>
-                <div class='col-md-4 d-flex justify-content-center'>
+                <div class='col-md-4 d-flex justify-content-center mb-3 mb-md-0 mb-lg-0'>
                     <div class='dropdown'>
                         <button aria-expanded='false' class='btn ukua-btn dropdown-toggle' data-toggle='dropdown'
                                 type='button'>Thème
                         </button>
                         <div class='dropdown-menu'>
-                            <a class='dropdown-item disabled' id='lightTheme'><i class='fas fa-sun'></i>&nbsp;Light</a>
-                            <a class='dropdown-item disabled' id='darkTheme'><i class='fas fa-moon'></i>&nbsp;Dark</a>
+                            <a class='dropdown-item disabled' id='lightTheme'><i class='fa fa-sun-o'></i>&nbsp;Light</a>
+                            <a class='dropdown-item disabled' id='darkTheme'><i class='fa fa-moon-o'></i>&nbsp;Dark</a>
                         </div>
                     </div>
                 </div>

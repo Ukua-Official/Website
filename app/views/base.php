@@ -1,6 +1,7 @@
 <!--suppress HtmlUnknownTarget -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?php echo Ukua::getLang() ?>">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">

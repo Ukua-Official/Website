@@ -494,6 +494,18 @@ TODO: Status
 }
 
 /*
+TODO: Input-Group
+ */
+.input-group input::placeholder {
+    color: var(--input-group-placeholder);
+}
+
+.input-group-text {
+    color: var(--input-group-text-color);
+    background-color: var(--input-group-text-background);
+}
+
+/*
 TODO: Form
  */
 .form-group {
